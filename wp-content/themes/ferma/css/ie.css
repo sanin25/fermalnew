@@ -1,0 +1,26 @@
+body{
+   background: rgba(24, 18, 18, 0.24);
+}
+.search{
+    display: none;
+}
+#imgsearch{
+    display: none;
+}
+#emailform{
+    display: none;
+}
+.cont3 {
+    background: url(../img/cont2.jpg) !important;
+    background-repeat: repeat !important;
+    width: 100% !important;
+    position: relative;
+    border-bottom: 2px solid #000;
+}
+
+header, nav, section, article, aside, footer {
+    display:block;
+}
+.pitomnikcarusel{
+    height: 500px !important;
+}

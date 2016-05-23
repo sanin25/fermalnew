@@ -1,0 +1,91 @@
+.pavlinbody{
+	@extend .gusibody;
+}
+.pavlin{
+	@extend .gusi ;
+}
+.pavlinimg{
+	@extend .gusiimg ;
+}
+.pavlintext{
+	@extend .gusitext ;
+}
+
+.kyribody{
+	@extend .gusibody;
+}
+.kyri{
+	@extend .gusi ;
+}
+.kyriimg{
+	@extend .gusiimg ;
+}
+.kyritext{
+	@extend .gusitext ;
+}
+.fazan{
+	@extend .gusi ;
+}
+
+ .category{
+ 	@extend .gusibody; 
+ 	width: 100%;
+	 height: 100%;
+ 	background:url(../img/bg-cat.png) 0 0 repeat;
+ 	.wrapper{
+ 		margin:0 auto;
+ 	}
+ 		h1{
+ 			text-align: center;
+ 			border-bottom: 7px solid #F2FF29;
+ 			border-top: 5px solid #1932E6;
+ 			width: 100%;
+ 			color: $color_link;
+ 			background: url(../img/bg-h1.png) 0 0 repeat;
+ 		}
+ 	.cat{
+ 		@extend .gusi ;
+ 		visibility: visible!important;
+ 		background: url(../img/bg-plit.jpg) 0 0 repeat;
+ 		height: 430px;
+ 		hr{
+ 			position: relative;
+ 			top: -13px;
+ 			border: 0;
+ 			height: 2px;
+ 			@include background-image(linear-gradient(left, transparent, rgba(0, 0, 0, 0.45), transparent));
+ 			 
+ 		}
+ 		h2{
+ 			font-size: 128%;
+ 			color:$color_link;
+ 			padding: 10px 0 17px 0;
+ 			font-family: cursive;
+ 			line-height: 0.9;
+ 		}
+ 		.catimg{
+			@extend .gusiimg;
+ 		}
+ 		.cattext{
+ 			@extend .gusitext;
+ 			margin:0;
+ 			padding: 0;
+ 			.more{
+ 				margin-top: 8px;
+				color:$color_link;
+ 			}
+			a:link{
+				&:hover{
+					color:#2a572a !important;
+					font-size: 120%;
+				}
+			}
+ 			.cattextin{
+ 				background: rgba(150, 149, 149, 0.58);
+			    margin: 12px 1px 0 1px;
+			    padding:3px;
+
+ 			}
+ 		}
+ 	}
+ }
