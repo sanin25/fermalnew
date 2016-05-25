@@ -56,7 +56,14 @@ jQuery.fn.exist = function() {
 
   	$('.kyri').css('visibility', 'visible');/*.addClass('animated bounceInRight');*/
 
-          TweenMax.staggerTo($('.kyri'), 3,{marginLeft:50, opacity:1, }, 1);
+      var tl = new TimelineMax();
+
+
+      tl.to(".line",1, {autoAlpha:1, width: "955px", ease: Linear.easeNone})
+
+          .to(".img1",2, {autoAlpha:1,scale:"1.5",ease: Elastic.easeOut.config(2, 0.5), y: 0 },"0.1")
+          .to(".line2", 0.5, {height:"580"},"-=1")
+          .staggerTo($('.kyri'), 1,{ autoAlpha:1, ease:Back.easeIn}, 0.2,"-=2");
 
 
 /*  var i = $('.cont4').offset().top - par;
@@ -75,17 +82,31 @@ jQuery.fn.exist = function() {
   if($('.cont5').exist()){
   var cont5 = $('.cont5').offset().top - par;
     if( cont5 < 450){
-    
-    $('.gusi').css('visibility', 'visible').addClass('animated bounceInLeft');
-    
-  }
+
+        $(".backimg").css({
+            "transform" :"translate3d(0%, " + cont5 * 1 + "%, 0px)",
+            "-webkit-transform" : "translate3d(0%, " + cont5 / 15 + "%, 0px)",
+            "-moz-transform" :  "translate3d(0%, " + cont5 / 15 + "%, 0px)"
+        });
+        $(".backimg2").css({
+            "transform" : "translate3d(0%, " + cont5 / 13 + "%, 0px)",
+            "-webkit-transform" : "translate3d(0%, " + cont5 / 13 + "%, 0px)",
+            "-moz-transform" : "translate3d(0%, " + cont5 / 13 + "%, 0px)"
+        });
+
+        $('.gusi').css('visibility', 'visible').addClass('animated fadeInUpBig');
+    }
   }
       if($('.cont6').exist()){
           var cont6 = $('.cont6').offset().top - par;
           if( cont6 < 450){
 
-              $('.pavlin').css('visibility', 'visible').addClass('animated fadeInUpBig');
+              $('.pavlin').css('visibility' , 'visible', "position" ,"foxed").addClass('animated fadeInUpBig');
 
+              var tl = new TimelineMax();
+
+
+              tl.to(".cont7",1,  {y: " " + cont6 / 2 + " "});
           }
       }
 
@@ -153,6 +174,7 @@ jQuery.fn.exist = function() {
 
     /*Слайден Питомника*/
     $('.pitomnik').bxSlider({
+        mode:"fade",
         minSlides: 1,
         controls: true,
         wrapperClass: 'pitomnikcarusel',

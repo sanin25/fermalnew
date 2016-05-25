@@ -7,6 +7,8 @@
  */
 ?>
 <div class="gusibody clearfix">
+	<img class="backimg" src="<?php echo get_template_directory_uri()?>/img/cont5back.png" alt="">
+	<img class="backimg2" src="<?php echo get_template_directory_uri()?>/img/cont5back2.png" alt="">
 
 	<?php
 		$args = array(

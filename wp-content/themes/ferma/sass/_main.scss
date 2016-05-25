@@ -102,12 +102,43 @@ section {
 .cont4 {
 	background: url(../img/cont4.jpg);
 	background-size: cover;
-	border-bottom: 2px solid #25c420;
+
+  .line{
+    height: 4px;
+    background: #3FFF00;
+    position: absolute;
+    opacity: 0;
+    top: 164px;
+    margin-left: 15px;
+  }
+  .line2{
+    background: red;
+    position: absolute;
+    height: 5px;
+    width: 3px;
+    left: 85%;
+    top: 33px;
+  }
+  .line3{
+    position: absolute;
+    bottom: 137px;
+    height: 4px;
+    background: red;
+    left: 20%;
+    opacity: 0;
+  }
+  .img1{
+    position: absolute;
+    top: 8px;
+    left: 83%;
+    z-index: 2;
+    opacity: 0;
+  }
 }
 .cont5 {
 	background: url(../img/cont5.jpg);
 	background-size: cover;
-	border-bottom: 2px solid #d6c823;
+	border-bottom: 2px solid #25c420;
 }
 .cont6 {
 	background: url(../img/cont6.jpg);
@@ -271,6 +302,20 @@ section {
 	z-index: 3;
 }
 .gusibody {
+  /*Ромашки*/
+  .backimg{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    z-index: 0;
+  }
+  .backimg2 {
+    position: absolute;
+    left: 0;
+    bottom: -245px;
+    z-index: 0;
+  }
+
 	margin: 0 auto;
 	h3 {
 		a {
@@ -303,11 +348,11 @@ section {
 	z-index: 1;
 	@include border-radius(4px 4px 4px 4px);
 	word-wrap: break-word;
-	visibility: hidden;
 	height: 408px;
     min-height: 200px;
     background: url(../img/cont2.jpg)0 0 repeat;
 	background-size: cover;
+  opacity: 0;
 }
 .gusiimg {
 	img {
