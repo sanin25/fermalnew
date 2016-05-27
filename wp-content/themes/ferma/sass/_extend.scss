@@ -16,6 +16,8 @@
 }
 .kyri{
 	@extend .gusi ;
+	@include translate3d(-100%,50%);
+
 }
 .kyriimg{
 	@extend .gusiimg ;

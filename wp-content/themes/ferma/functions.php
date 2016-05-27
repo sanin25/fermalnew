@@ -19,17 +19,32 @@ register_sidebar(); // Регистрируем сайдбар
     function addAllScriptsAndCss(){
         /*Scripts*/
 
+
+
+        wp_enqueue_script( 'my-jquery-ui', get_template_directory_uri().'/js/jquery-ui.min.js',array('jquery'));
+
         wp_enqueue_script( 'my-bxslider', get_template_directory_uri().'/js/jquery.bxslider.min.js',array('jquery'));
 
         wp_enqueue_script( 'my_magnific', get_template_directory_uri().'/js/jquery.magnific-popup.min.js',array('jquery'));
 
         wp_enqueue_script( 'my_magnific', get_template_directory_uri().'/js/jhtml5shiv-printshiv.js',array('jquery'));
 
-        wp_enqueue_script( 'my_TimelineMax', get_template_directory_uri().'/js/TimelineMax.min.js',array('jquery'));
+        wp_enqueue_script( 'my_TweenMax', get_template_directory_uri().'/js/TweenMax.min.js',array('jquery'));
 
-        wp_enqueue_script( 'my_TimeMax', get_template_directory_uri().'/js/TweenMax.min.js',array('jquery'));
+        wp_enqueue_script( 'my_TextPlugin', get_template_directory_uri().'/js/TextPlugin.js',array('jquery'));
 
-        wp_enqueue_script( 'my_ui', ('https://code.jquery.com/ui/1.11.4/jquery-ui.js'),array('jquery'));
+        wp_enqueue_script( 'my_ScrollToPlugin', get_template_directory_uri().'/js/ScrollToPlugin.js',array('jquery'));
+
+
+        wp_enqueue_script( 'my_ScrollMagic', get_template_directory_uri().'/js/ScrollMagic.js',array('jquery'));
+
+        wp_enqueue_script( 'my_gsap', get_template_directory_uri().'/js/animation.gsap.js',array('jquery'));
+
+
+        wp_enqueue_script( 'my_addIndicators', get_template_directory_uri().'/js/debug.addIndicators.js',array('jquery'));
+
+        wp_enqueue_script( 'my_imagesloaded', get_template_directory_uri().'/js/imagesloaded.pkgd.js',array('jquery'));
+
 
         wp_enqueue_script( 'my-script', get_template_directory_uri().'/js/myscript.js',array('jquery'));
 
