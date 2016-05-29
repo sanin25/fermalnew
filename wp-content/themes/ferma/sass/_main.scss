@@ -83,20 +83,21 @@ section {
 	overflow: hidden;
 	display: table;
 }
-.zx{
-  background: red;
-  width: 350px;
+#rom{
   position: absolute;
-  top: 300px;
+  top: 0;
+  width: 100%;
+	background-size:cover ;
+	height: 1500px;
 }
-.slideInUp2 {
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s; }
-.is-active .slideInUp {
-	visibility: visible;
-	opacity: 1;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0); }
+#ksvg{
+  position: absolute;
+  top: 0;
+  width: 100%;
+	background-size:cover ;
+	height: 1500px;
+}
+
 .cont1 {
   h1{
     background: rgba(146, 40, 40, 0.25);
@@ -129,6 +130,7 @@ section {
 
   }
 }
+
 .cont2 {
 	background: url(../img/cont2.jpg)0 0 repeat;
 	position: relative;
@@ -366,30 +368,48 @@ section {
 
 	margin: 0 auto;
 	h3 {
-		position: relative;
-		a {
-			text-align: center;
-			background: rgba(178, 171, 171, 0.51);
-			clear: both;
-			display: block;
-			color: $color_link;
-			font-size: 133%;
-			z-index: 5;
-			position: relative;
-			margin-bottom: 50px;
-			&:hover {
-				color: $color_hover;
-			}
-		}
-		margin-top: 20px;
-	}
+       position: relative;
+       a {
+         text-align: center;
+         background: rgba(178, 171, 171, 0.51);
+         clear: both;
+         display: block;
+         color: $color_link;
+         font-size: 133%;
+         z-index: 5;
+         position: relative;
+         margin-bottom: 50px;
+         &:hover {
+           color: $color_hover;
+         }
+       }
+       margin-top: 20px;
+     }
+  h4 {
+    position: relative;
+    clear: both;
+    a {
+      text-align: center;
+      background: rgba(178, 171, 171, 0.51);
+      clear: both;
+      display: block;
+      color: $color_link;
+      font-size: 133%;
+      z-index: 5;
+      position: relative;
+      margin-bottom: 50px;
+      &:hover {
+        color: $color_hover;
+      }
+    }
+    margin-top: 20px;
+  }
 }
 .gusi {
 	margin-top: 50px;
-	border: 1px solid #ddd;
+	border: 0px solid #ddd;
 	width: 310px;
 	float: left;
-	background: #E4D8A4;
 	margin-left: 15px;
 	margin-bottom: 45px;
 	overflow: hidden;
@@ -399,9 +419,8 @@ section {
 	word-wrap: break-word;
 	height: 408px;
     min-height: 200px;
-    background: url(../img/cont2.jpg)0 0 repeat;
-	background-size: cover;
   opacity: 0;
+
 }
 .gusiimg {
 	img {
@@ -421,6 +440,8 @@ section {
 	position: relative;
 	margin-top: -13px;
 	padding: 18px;
+  background: url(../img/cont2.jpg)0 0 repeat;
+  height: 100%;
 	h2 {
 		a {
 			color: #0E5505;

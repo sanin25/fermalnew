@@ -89,11 +89,20 @@ section {
   display: table;
 }
 
-.zx {
-  background: red;
-  width: 350px;
+#rom {
   position: absolute;
-  top: 300px;
+  top: 0;
+  width: 100%;
+  background-size: cover;
+  height: 1500px;
+}
+
+#ksvg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-size: cover;
+  height: 1500px;
 }
 
 .cont1 {
@@ -132,6 +141,7 @@ section {
   background: url(../img/cont2.jpg) 0 0 repeat;
   position: relative;
   border-bottom: 2px solid #000;
+  height: 0%;
 }
 
 .cont3 {
@@ -382,6 +392,7 @@ section {
   z-index: 0;
 }
 .gusibody h3, .pavlinbody h3, .kyribody h3, .category h3 {
+  position: relative;
   margin-top: 20px;
 }
 .gusibody h3 a, .pavlinbody h3 a, .kyribody h3 a, .category h3 a {
@@ -398,13 +409,31 @@ section {
 .gusibody h3 a:hover, .pavlinbody h3 a:hover, .kyribody h3 a:hover, .category h3 a:hover {
   color: #13007A;
 }
+.gusibody h4, .pavlinbody h4, .kyribody h4, .category h4 {
+  position: relative;
+  clear: both;
+  margin-top: 20px;
+}
+.gusibody h4 a, .pavlinbody h4 a, .kyribody h4 a, .category h4 a {
+  text-align: center;
+  background: rgba(178, 171, 171, 0.51);
+  clear: both;
+  display: block;
+  color: #0e5505;
+  font-size: 133%;
+  z-index: 5;
+  position: relative;
+  margin-bottom: 50px;
+}
+.gusibody h4 a:hover, .pavlinbody h4 a:hover, .kyribody h4 a:hover, .category h4 a:hover {
+  color: #13007A;
+}
 
 .gusi, .pavlin, .kyri, .fazan, .category .cat {
   margin-top: 50px;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   width: 310px;
   float: left;
-  background: #E4D8A4;
   margin-left: 15px;
   margin-bottom: 45px;
   overflow: hidden;
@@ -416,8 +445,6 @@ section {
   word-wrap: break-word;
   height: 408px;
   min-height: 200px;
-  background: url(../img/cont2.jpg) 0 0 repeat;
-  background-size: cover;
   opacity: 0;
 }
 
@@ -445,6 +472,8 @@ section {
   position: relative;
   margin-top: -13px;
   padding: 18px;
+  background: url(../img/cont2.jpg) 0 0 repeat;
+  height: 100%;
 }
 .gusitext h2 a, .pavlintext h2 a, .kyritext h2 a, .category .cat .cattext h2 a {
   color: #0E5505;
@@ -1410,9 +1439,13 @@ ul.bxslider {
 }
 
 .kyri {
-  -moz-transform: translate3d(-100%, 50%, 1em);
-  -webkit-transform: translate3d(-100%, 50%, 1em);
-  transform: translate3d(-100%, 50%, 1em);
+  opacity: 1 !important;
+}
+.kyri .kyriimg {
+  opacity: 0;
+}
+.kyri .kyritext {
+  opacity: 0;
 }
 
 .category {

@@ -38,7 +38,7 @@
 			
 </div>
 	<?php endwhile; ?>
-	<h3><a href="<?php echo get_category_link(3); ?>">Посмотреть всё</a></h3>
+	<h4><a href="<?php echo get_category_link(3); ?>">Посмотреть всё</a></h4>
 	</div>
 	<?php wp_reset_postdata();?>
 

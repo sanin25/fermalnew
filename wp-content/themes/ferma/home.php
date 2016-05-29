@@ -20,19 +20,14 @@ get_header(); // Подключаем хедер?>
 	</section>
 
 	<section class="heigh cont4 clearfix" id="slide02">
-		<div class="slideInUp2 is-active ">
-			<h1>h1</h1>
-			<p>fjn</p>
-		</div>
-        <div class="zx">
-            <h1>Первый пошел !</h1>
-            <section>
-                <p>Текст первого!!</p>
-        </div>
+			<div id="ksvg"></div>
 		<?php get_template_part('inc/kyri');?>
 	</section>
 
 	<section class="heigh cont5 clearfix">
+
+			<a href="#" id="rom"></a>
+
 		<?php get_template_part('inc/gusi');?>
 	</section>
 

@@ -20,6 +20,7 @@ register_sidebar(); // Регистрируем сайдбар
         /*Scripts*/
 
 
+        wp_enqueue_script( 'my-detectei', get_template_directory_uri().'/js/detectEi.js');
 
         wp_enqueue_script( 'my-jquery-ui', get_template_directory_uri().'/js/jquery-ui.min.js',array('jquery'));
 
@@ -33,9 +34,6 @@ register_sidebar(); // Регистрируем сайдбар
 
         wp_enqueue_script( 'my_TextPlugin', get_template_directory_uri().'/js/TextPlugin.js',array('jquery'));
 
-        wp_enqueue_script( 'my_ScrollToPlugin', get_template_directory_uri().'/js/ScrollToPlugin.js',array('jquery'));
-
-
         wp_enqueue_script( 'my_ScrollMagic', get_template_directory_uri().'/js/ScrollMagic.js',array('jquery'));
 
         wp_enqueue_script( 'my_gsap', get_template_directory_uri().'/js/animation.gsap.js',array('jquery'));
@@ -43,7 +41,9 @@ register_sidebar(); // Регистрируем сайдбар
 
         wp_enqueue_script( 'my_addIndicators', get_template_directory_uri().'/js/debug.addIndicators.js',array('jquery'));
 
-        wp_enqueue_script( 'my_imagesloaded', get_template_directory_uri().'/js/imagesloaded.pkgd.js',array('jquery'));
+        wp_enqueue_script( 'my_rom', get_template_directory_uri().'/js/rom.js',array('jquery'));
+
+        wp_enqueue_script( 'my_lazy', get_template_directory_uri().'/js/jquery.lazylinepainter-1.7.0.min.js',array('jquery'));
 
 
         wp_enqueue_script( 'my-script', get_template_directory_uri().'/js/myscript.js',array('jquery'));
