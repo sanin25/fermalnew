@@ -28,12 +28,13 @@ register_sidebar(); // Регистрируем сайдбар
 
         wp_enqueue_script( 'my_magnific', get_template_directory_uri().'/js/jquery.magnific-popup.min.js',array('jquery'));
 
-        wp_enqueue_script( 'my_magnific', get_template_directory_uri().'/js/jhtml5shiv-printshiv.js',array('jquery'));
 
         wp_enqueue_script( 'my_TweenMax', get_template_directory_uri().'/js/TweenMax.min.js',array('jquery'));
 
         wp_enqueue_script( 'my_TextPlugin', get_template_directory_uri().'/js/TextPlugin.js',array('jquery'));
 
+        wp_enqueue_script( 'my_mimagesLoaded', get_template_directory_uri().'/js/imagesLoaded.js',array('jquery'));
+        
         wp_enqueue_script( 'my_ScrollMagic', get_template_directory_uri().'/js/ScrollMagic.js',array('jquery'));
 
         wp_enqueue_script( 'my_gsap', get_template_directory_uri().'/js/animation.gsap.js',array('jquery'));
