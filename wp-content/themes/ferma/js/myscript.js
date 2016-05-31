@@ -3,71 +3,6 @@ jQuery(document).ready(function($) {
     BrowserDetect.browser == 'Explorer';
     var controller = new ScrollMagic.Controller();
 
-
-    // number of loaded images for preloader progress
-    var loadedCount = 0; //current number of images loaded
-    var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
-    var loadingProgress = 0; //timeline progress - starts at 0
-    console.log(imagesToLoad);
-
-    $('.bcg').imagesLoaded({
-            background: true
-        }
-    ).progress( function( instance, image ) {
-        loadProgress();
-    });
-
-    function loadProgress(imgLoad, image)
-    {
-        //one more image has been loaded
-        loadedCount++;
-
-        loadingProgress = (loadedCount/imagesToLoad);
-
-        console.log(loadedCount);
-
-        // GSAP timeline for our progress bar
-        TweenLite.to(progressTl, 0.7, {progress:loadingProgress, ease:Linear.easeNone});
-
-    }
-
-    //progress animation instance. the instance's time is irrelevant, can be anything but 0 to void  immediate render
-    var progressTl = new TimelineMax({paused:true,onUpdate:progressUpdate,onComplete:loadComplete});
-
-    progressTl
-    //tween the progress bar width
-        .to($('.progress span'), 1, {width:100, ease:Linear.easeNone});
-
-    //as the progress bar witdh updates and grows we put the precentage loaded in the screen
-    function progressUpdate()
-    {
-        //the percentage loaded based on the tween's progress
-        loadingProgress = Math.round(progressTl.progress() * 100);
-        //we put the percentage in the screen
-        $(".txt-perc").text(loadingProgress + '%');
-          
-
-    }
-
-    function loadComplete() {
-
-        // preloader out
-        var preloaderOutTl = new TimelineMax();
-
-        preloaderOutTl
-            .to($('.progress'), 0.3, {y: 100, autoAlpha: 0, ease:Back.easeIn})
-            .to($('.txt-perc'), 0.3, {y: 100, autoAlpha: 0, ease:Back.easeIn}, 0.1)
-            .to($('#preloader'), 0.7, {yPercent: 100, ease:Power4.easeInOut})
-            .set($('body'), {className: '-=is-loaded'})
-            .set($('body'), {className: '-=is-loading'})
-            .set($('#preloader'), {className: '+=is-hidden'})
-
-        return preloaderOutTl;
-    }
-
- 
-
-
     jQuery.fn.exist = function() {
         return $(this).length;
 
@@ -86,7 +21,7 @@ jQuery(document).ready(function($) {
 
     function setAuto() {
         $('.heigh').css({
-            height:'auto'
+            height: 'auto'
         });
     }
 
@@ -99,225 +34,228 @@ jQuery(document).ready(function($) {
     /*Конец высоты*/
 
 
-    /*Затемняем в конце */
+    // number of loaded images for preloader progress
+    var loadedCount = 0; //current number of images loaded
+    var imagesToLoad = $('.bcg').length; //number of slides with .bcg container
+    var loadingProgress = 0; //timeline progress - starts at 0
 
-    var cants = [".cont1", ".cont3", ".cont4", ".cont5", ".cont6", ".cont7", ".cont8"];
+    if($('.bcg').exist()) {
 
-    cants.forEach(function (cant, index) {
+        $('.bcg').imagesLoaded({
+                background: true
+            }
+        ).progress(function (instance, image) {
+            loadProgress();
+        });
+
+        function loadProgress(imgLoad, image) {
+            //one more image has been loaded
+            loadedCount++;
+
+            loadingProgress = (loadedCount / imagesToLoad);
+
+            console.log(loadedCount);
+
+            // GSAP timeline for our progress bar
+            TweenLite.to(progressTl, 0.7, {progress: loadingProgress, ease: Linear.easeNone});
+
+        }
+
+        //progress animation instance. the instance's time is irrelevant, can be anything but 0 to void  immediate render
+        var progressTl = new TimelineMax({paused: true, onUpdate: progressUpdate, onComplete: loadComplete});
+
+        progressTl
+        //tween the progress bar width
+            .to($('.progress span'), 1, {width: 100, ease: Linear.easeNone});
+
+        //as the progress bar witdh updates and grows we put the precentage loaded in the screen
+        function progressUpdate() {
+            //the percentage loaded based on the tween's progress
+            loadingProgress = Math.round(progressTl.progress() * 100);
+            //we put the percentage in the screen
+            $(".txt-perc").text(loadingProgress + '%');
 
 
-        var num = index+1;
-        // make scene
-        var contScene = new ScrollMagic.Scene({
-            triggerElement: cant ,
+        }
+
+        function loadComplete() {
+            // preloader out
+            var preloaderOutTl = new TimelineMax();
+
+
+            preloaderOutTl
+                .to($('.progress'), 0.3, {y: 100, autoAlpha: 0, ease: Back.easeIn})
+                .to($('.txt-perc'), 0.3, {y: 100, autoAlpha: 0, ease: Back.easeIn}, 0.1)
+                .to($('#preloader'), 1.1, {autoAlpha: 0, ease: Power4.easeInOut})
+                .to($('.cont1 .bcg'), 1.1, {scale: '1'}, "-=1.1")
+                .set($('#preloader'), {className: '+=is-hidden'});
+
+            return preloaderOutTl;
+        }
+
+
+
+        /*Затемняем в конце */
+
+        var cants = [".cont1", ".cont3", ".cont4", ".cont5", ".cont6", ".cont7", ".cont8"];
+
+        cants.forEach(function (cant, index) {
+
+
+            var num = index + 1;
+            // make scene
+            var contScene = new ScrollMagic.Scene({
+                triggerElement: cant,
+                triggerHook: 0,
+                offset: 350
+            })
+                .setTween(new TimelineMax().to($(cant), 0.32, {autoAlpha: 0.5, ease: Power0.easeNone}))
+                .addTo(controller);
+        });
+        /*Первый сайд лого*/
+
+        var logo = new TimelineMax();
+
+        logo.to($('#logo'), 1, {y: '+=460'}, {ease: Power1.easeOut}, '+=0.4')
+            .to($('.cont1 h1'), 1, {autoAlpha: "-1"}, {ease: Power1.easeOut}, '+=0.8');
+        var logoScroll = new ScrollMagic.Scene({
+            triggerElement: '.cont1',
             triggerHook: 0,
-            offset:350
+            duration: "300%"
         })
-            .setTween(new TimelineMax().to($(cant ), 0.32, {autoAlpha:0.5, ease:Power0.easeNone}))
+            .setTween(logo)
             .addTo(controller);
-    });
-    /*Первый сайд лого*/
 
-    var tl = new TimelineMax();
-    tl.to($('.cont1 .bcg'),5, {scale: '1'});
+        /*Конец лого*/
+        /*Салайд 2 */
 
-    var logo = new TimelineMax();
+        var about = new TimelineMax();
 
-    logo.to($('#logo'), 1, {y: '+=460'}, {ease:Power1.easeOut}, '+=0.4')
-        .to($('.cont1 h1'), 1, {autoAlpha: "-1"}, { ease:Power1.easeOut}, '+=0.8');
-    var logoScroll = new ScrollMagic.Scene({
-        triggerElement: '.cont1',
-        triggerHook: 0,
-        duration: "300%"
-    })
-        .setTween(logo)
-        .addTo(controller);
+        var lineAbout = about
+            .to($('#tab-container h3'), 0.2, {left: "0%", ease: Back.easeOut.config(4), y: 0})
+            .to($('#tab-container .line'), 1, {width: "100%"})
+            .to($('#tab-container .textunber '), 2, {
+                autoAlpha: 1,
+                ease: Elastic.easeOut.config(1, 0.3),
+                y: 0
+            }, "-=0.2");
 
-    /*Конец лого*/
-    /*Салайд 2 */
+        var logoScroll = new ScrollMagic.Scene({
+            triggerElement: '.cont2',
+            triggerHook: 0,
+            offset: "-200px"
+        })
+            .setTween(lineAbout)
+            .addTo(controller);
 
-    var about = new TimelineMax();
+        logoScroll.on("enter", function (event) {
+            logoScroll.remove();
+        });
+        /*Салайд 4 kyri*/
 
-    var lineAbout = about.to($('#tab-container h3'), 0.8, {left:"0%",ease: Back.easeOut.config(4), y: 0 })
-        .to($('#tab-container .line'), 1, {width:"100%"})
-        .staggerTo($('#tab-container .fotoin ul li'), 1, {y: 0,autoAlpha: 1,rotationX:"+=360deg", ease:Power1.easeInOut},0.2)
-        .to($('#tab-container .textunber '), 3, {autoAlpha:1,rotationY:"+=360deg",  ease: Elastic.easeOut.config(1, 0.3), y: 0 },"-=0.2");
-
-    var logoScroll = new ScrollMagic.Scene({
-        triggerElement: '.cont2',
-        triggerHook: 0
-    })
-        .setTween(lineAbout)
-        .addTo(controller);
-
-    logoScroll.on("enter", function (event) {
-        logoScroll.remove();
-    });
-    /*Салайд 4 about*/
-
-    var Kyri = new TimelineMax();
-    var lineKyri = Kyri
-        .staggerTo($('.kyri'), 3, {borderColor: "#919F90", borderWidth:2}, 0.5,"-=1")
-        .staggerTo($('.kyriimg, .kyritext'), 1, {autoAlpha:1,rotationY:"+=360deg"}, 0.1,"-=1");
+        var Kyri = new TimelineMax();
+        var lineKyri = Kyri
+            .staggerTo($('.kyriimg, .kyritext'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
 
 
-    /* .to($('.kyribody'), 3, {autoAlpha:1,rotationY:"+=360deg",  ease: Elastic.easeOut.config(1, 0.3), y: 0 },"-=0.2");*/
-    var kyriScroll = new ScrollMagic.Scene({
-        triggerElement: '.cont4',
-        triggerHook: 0,
-        offset: -250
-    })
-        .setTween(lineKyri)
-        .addTo(controller);
+        /* .to($('.kyribody'), 3, {autoAlpha:1,rotationY:"+=360deg",  ease: Elastic.easeOut.config(1, 0.3), y: 0 },"-=0.2");*/
+        var kyriScroll = new ScrollMagic.Scene({
+            triggerElement: '.cont4',
+            triggerHook: 0,
+            offset: -250
+        })
+            .setTween(lineKyri)
+            .addTo(controller);
 
-    kyriScroll.on("enter", function (event) {
-        kyriScroll.remove();
-    });
-    /*Салайд 5 about*/
+        kyriScroll.on("enter", function (event) {
+            kyriScroll.remove();
+        });
+        /*Салайд 5 about*/
 
-    var gusy= new TimelineMax();
-    var lineGusy = gusy
-        .to($('.gusi h3'), 1, {autoAlpha:1, y: 25, ease: Back.easeOut.config(4)})
-        .staggerTo($('.gusi'), 2, {y: 0,x: 0,autoAlpha:1,autoAlpha:1,ease: Bounce.easeOut}, 0.5,"+=1");
+        var gusy = new TimelineMax();
+        var lineGusy = gusy
+            .staggerTo($('.gusi'), 1, {y: 0, x: 0, autoAlpha: 1, autoAlpha: 1, ease: Bounce.easeOut}, 0.5);
 
-    var gusyiScroll = new ScrollMagic.Scene({
-        triggerElement: '.cont5',
-        triggerHook: 0,
-        offset: -350
-    })
-        .setTween(lineGusy)
-        .addTo(controller);
+        var gusyiScroll = new ScrollMagic.Scene({
+            triggerElement: '.cont5',
+            triggerHook: 0,
+            offset: -350
+        })
+            .setTween(lineGusy)
+            .addTo(controller);
 
-    gusyiScroll .on("enter", function (event) {
-        /*Ромашки*/
-
-        if(BrowserDetect.version >= 10) {
-            $('#rom').lazylinepainter(
-                {
-                    "svgData": pathObj
-                }).lazylinepainter('paint');
-        }
-    });
-    gusyiScroll.on("enter", function (event) {
-        gusyiScroll.remove();
-    });
+        gusyiScroll.on("enter", function (event) {
+            gusyiScroll.remove();
+        });
 
 
-    var paraGusy = new TimelineMax();
-    var paraG = paraGusy
-        .set($('.backimg'),{y: '-150'})
-        .set($('.backimg2'),{y: '+300'})
-        .to($('.backimg'), 2,{y: '+=260'})
-        .to($('.backimg2'), 2,{y: '-=660'}, "-=2");
+        var paraGusy = new TimelineMax();
+        var paraG = paraGusy
+            .set($('.backimg'), {y: '-150'})
+            .set($('.backimg2'), {y: '+300'})
+            .to($('.backimg'), 2, {y: '+=260'})
+            .to($('.backimg2'), 2, {y: '-=660'}, "-=2");
 
-    var gusyiScrollPara = new ScrollMagic.Scene({
-        triggerElement: '.cont5',
-        triggerHook: 0,
-        duration: "200%",
-        offset: -550
-    })
-        .setTween(paraG)
-        .addTo(controller);
+        var gusyiScrollPara = new ScrollMagic.Scene({
+            triggerElement: '.cont5',
+            triggerHook: 0,
+            duration: "200%",
+            offset: -550
+        })
+            .setTween(paraG)
+            .addTo(controller);
 
-    /*Текст к картинкам контакты*/
+        /*Слайд 6*/
 
-
-    $("#tab-container").tabs(
-        {
-            hide: { effect: "explode", duration: 700 },
-            show: { effect: "slide", duration: 500 }
+        var pavlin = new TimelineMax();
+        var linePavlin = pavlin
+            .staggerTo($('.pavlin'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
 
 
-        }
-    );
+        var pavlinScroll = new ScrollMagic.Scene({
+            triggerElement: '.cont6',
+            triggerHook: 0,
+            offset: -250
+        })
+            .setTween(linePavlin)
+            .addTo(controller);
 
-    /*Паралакс*/
-    /*  $(window).scroll(function() {
-     var par = $(this).scrollTop();
-     /!*Лого*!/
-     $("#logo").css({
-     "transform" :"translate3d(0px , " + par /3 + "%, .0px)",
-     "-webkit-transform" : "translate3d(0px , " + par /3 + "%, .0px)",
-     "-moz-transform" : "translate3d(0px , " + par /3 + "%, .0px)"
+        pavlinScroll.on("enter", function (event) {
+            pavlinScroll.remove();
+        });
 
-     });
-     /!*Облока*!/
-     if($('.cont4').exist()){
-     var cont4 = $('.cont4').offset().top - par;
-     if( cont4 < 450){
+        /*Слайд 7*/
 
-     $('.kyri').css('visibility', 'visible');/!*.addClass('animated bounceInRight');*!/
-
-     var tl = new TimelineMax();
+        var fazan = new TimelineMax();
+        var lineFazan = fazan
+            .staggerTo($('.fazan'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
 
 
-     tl.to(".line",1, {autoAlpha:1, width: "955px", ease: Linear.easeNone})
+        var fazaninScroll = new ScrollMagic.Scene({
+            triggerElement: '.cont7',
+            triggerHook: 0,
+            offset: -250
+        })
+            .setTween(lineFazan)
+            .addTo(controller);
 
-     .to(".img1",2, {autoAlpha:1,scale:"1.5",ease: Elastic.easeOut.config(2, 0.5), y: 0 },"0.1")
-     .to(".line2", 0.5, {height:"580"},"-=1")
-     .staggerTo($('.kyri'), 1,{ autoAlpha:1, ease:Back.easeIn}, 0.2,"-=2");
-
-
-     /!*  var i = $('.cont4').offset().top - par;
-     $("#obl1").css({
-     "transform" :"translate3d(" + i * 1 + "%, 0%, .0px)",
-     "-webkit-transform" : "translate3d(" + i * 1 + "%, 0%, .0px)",
-     "-moz-transform" : "translate3d(" + i * 1 + "%, 0%, .0px)"
-     });*!/
-     $("#obl2").css({
-     "right" :"" + par /60 + "%",
-     });
-     }
-     }
-     /!* Конец облока*!/
-
-     if($('.cont5').exist()){
-     var cont5 = $('.cont5').offset().top - par;
-     if( cont5 < 450){
-
-     $(".backimg").css({
-     "transform" :"translate3d(0%, " + cont5 * 1 + "%, 0px)",
-     "-webkit-transform" : "translate3d(0%, " + cont5 / 15 + "%, 0px)",
-     "-moz-transform" :  "translate3d(0%, " + cont5 / 15 + "%, 0px)"
-     });
-     $(".backimg2").css({
-     "transform" : "translate3d(0%, " + cont5 / 13 + "%, 0px)",
-     "-webkit-transform" : "translate3d(0%, " + cont5 / 13 + "%, 0px)",
-     "-moz-transform" : "translate3d(0%, " + cont5 / 13 + "%, 0px)"
-     });
-
-     $('.gusi').css('visibility', 'visible').addClass('animated fadeInUpBig');
-     }
-     }
-     if($('.cont6').exist()){
-     var cont6 = $('.cont6').offset().top - par;
-     if( cont6 < 450){
-
-     $('.pavlin').css('visibility' , 'visible', "position" ,"foxed").addClass('animated fadeInUpBig');
-
-     var tl = new TimelineMax();
+        fazaninScroll.on("enter", function (event) {
+            pavlinScroll.remove();
+        });
+        /*Текст к картинкам контакты*/
 
 
-     tl.to(".cont7",1,  {y: " " + cont6 / 2 + " "});
-     }
-     }
+        $("#tab-container").tabs(
+            {
+                hide: {effect: "explode", duration: 700},
+                show: {effect: "slide", duration: 500}
 
-     if($('.cont7').exist()){
-     var cont7 = $('.cont7').offset().top - par;
-     if( cont7 < 450){
 
-     $('.fazan').css('visibility', 'visible').addClass('animated zoomInRight');
-
-     }
-     }
-
-     /!*Часть About *!/
-     if ($(this).scrollTop() > 300) {
-     $('.fotoin').css('visibility', 'visible').addClass('animated bounceInLeft');
-     $('.textunber').css('visibility', 'visible').addClass('animated bounceInRight');
-     $('.about h3').css('visibility', 'visible').addClass('animated bounceInUp');
-     }
-     });*/
+            }
+        );
+    }else{
+        $('#preloader').css({"display": 'none'});
+    }
     /* Форма отправки письма*/
     $('#emailform').click(function() {
         $('.semdmail').animate({

@@ -31,8 +31,6 @@ get_header(); // Подключаем хедер?>
 
 	<section class="heigh cont5 clearfix">
         <div class="bcg"></div>
-			<a href="#" id="rom"></a>
-
 		<?php get_template_part('inc/gusi');?>
 	</section>
 

@@ -115,8 +115,9 @@ section {
   width: 100%;
   height: 100%;
   z-index: 101;
-  background-color: #003d07;
-  color: #ffffff;
+  background: url("../img/load.svg") center center no-repeat;
+  background-color: #FBFAF5;
+  color: #003d07;
 }
 
 #preloader .txt {
@@ -139,7 +140,7 @@ section {
 
 #preloader .progress {
   width: 100px;
-  height: 3px;
+  height: 9px;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 0 auto 15px auto;
 }
@@ -148,7 +149,7 @@ section {
   display: block;
   width: 0;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #003D07;
 }
 
 #preloader.is-hidden {
@@ -479,7 +480,7 @@ section {
 
 .gusi, .pavlin, .kyri, .fazan, .category .cat {
   margin-top: 50px;
-  border: 0px solid #dd1a18;
+  border: 1px solid #919995;
   width: 310px;
   float: left;
   margin-left: 15px;
@@ -1186,7 +1187,7 @@ section {
   content: '';
   position: absolute;
   top: 0;
-  left: -25px;
+  left: -24px;
   width: 0;
   height: 0;
   border-style: solid;

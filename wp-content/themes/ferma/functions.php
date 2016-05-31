@@ -39,14 +39,6 @@ register_sidebar(); // Регистрируем сайдбар
 
         wp_enqueue_script( 'my_gsap', get_template_directory_uri().'/js/animation.gsap.js',array('jquery'));
 
-
-        wp_enqueue_script( 'my_addIndicators', get_template_directory_uri().'/js/debug.addIndicators.js',array('jquery'));
-
-        wp_enqueue_script( 'my_rom', get_template_directory_uri().'/js/rom.js',array('jquery'));
-
-        wp_enqueue_script( 'my_lazy', get_template_directory_uri().'/js/jquery.lazylinepainter-1.7.0.min.js',array('jquery'));
-
-
         wp_enqueue_script( 'my-script', get_template_directory_uri().'/js/myscript.js',array('jquery'));
 
         /*Css*/
