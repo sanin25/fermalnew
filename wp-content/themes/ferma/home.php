@@ -12,7 +12,7 @@ get_header(); // Подключаем хедер?>
         <h1>«Растёт то, что мы выращиваем в душе, - таков  закон природы».</h1>
     </section>
 
-    <section class="heigh cont2 clearfix">
+    <section class="heigh cont2  clearfix">
 		<div class="bcg"></div>
         <?php get_template_part('inc/about');?>
     </section>

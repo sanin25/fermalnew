@@ -46,7 +46,15 @@
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="is-loading">
+
+<div id="preloader">
+	<div class="txt">
+		<p class="txt-perc">0%</p>
+		<div class="progress"><span></span></div>
+	</div>
+</div>
+
 <!-- Форма отправки почты -->
 <div class="forma">
 <img id="emailform" src="<?php echo get_template_directory_uri();?>/img/vopros.png">
