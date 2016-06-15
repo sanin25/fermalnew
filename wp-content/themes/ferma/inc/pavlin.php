@@ -15,7 +15,7 @@
 			
 		);
 	 $query = new WP_Query($args); ?>
-	<h3><a href="<?php echo get_category_link(2); ?>">Павлины</a></h3>
+	<header><a href="<?php echo get_category_link(2); ?>">Павлины</a></header>
 		<?php while ( $query->have_posts()) : $query->the_post(); ?>
 <div class="pavlin">
 	<div class="gusiimg">
@@ -36,7 +36,7 @@
 			
 </div>
 	<?php endwhile; ?>
-	<h3><a href="<?php echo get_category_link(4); ?>">Посмотреть всё</a></h3>
+	<h4><a href="<?php echo get_category_link(4); ?>">Посмотреть всё</a></h4>
 	</div>
 	<?php wp_reset_postdata();?>
 

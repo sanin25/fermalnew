@@ -71,7 +71,7 @@ html,body {
   overflow: hidden;
 }
 
-section {
+article {
 	width: 100%;
 	max-width: 1920px;
 	min-width: 800px;
@@ -413,7 +413,7 @@ section {
   }
 
 	margin: 0 auto;
-	h3 {
+	header {
        position: relative;
        a {
          text-align: center;
@@ -453,7 +453,7 @@ section {
 }
 .gusi {
 	margin-top: 50px;
-	border: 1px solid #919995;
+	border: 1px solid rgba(255, 255, 255, 1);
 	width: 310px;
 	float: left;
 	margin-left: 15px;

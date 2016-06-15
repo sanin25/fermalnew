@@ -1,7 +1,8 @@
 jQuery(document).ready(function($) {
 
-    BrowserDetect.browser == 'Explorer';
+    var  ie = BrowserDetect.browser == 'Explorer';
     var controller = new ScrollMagic.Controller();
+
 
     jQuery.fn.exist = function() {
         return $(this).length;
@@ -240,7 +241,7 @@ jQuery(document).ready(function($) {
             .addTo(controller);
 
         fazaninScroll.on("enter", function (event) {
-            pavlinScroll.remove();
+            fazaninScroll.remove();
         });
         /*Текст к картинкам контакты*/
 
@@ -403,4 +404,3 @@ jQuery(document).ready(function($) {
 
 
 });
-

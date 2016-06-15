@@ -6,49 +6,49 @@
  * @subpackage fermerjeck
  */
 get_header(); // Подключаем хедер?>
-    <section class="heigh2 cont1 clearfix">
+    <article class="heigh2 cont1 clearfix">
 		<div class="bcg"></div>
 		<img src="<?php echo get_template_directory_uri()?>/img/logo.svg" alt="Эко ферма" id="logo">
         <h1>«Растёт то, что мы выращиваем в душе, - таков  закон природы».</h1>
-    </section>
+    </article>
 
-    <section class="heigh cont2  clearfix">
+    <article class="heigh cont2  clearfix">
 		<div class="bcg"></div>
         <?php get_template_part('inc/about');?>
-    </section>
+    </article>
 
-	<section class="heigh cont3 clearfix">
+	<article class="heigh cont3 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/liveferma');?>
-	</section>
+	</article>
 
-	<section class="heigh cont4 clearfix" id="slide02">
+	<article class="heigh cont4 clearfix" id="slide02">
 
         <div class="bcg"></div>
-			
-		<?php get_template_part('inc/kyri');?>
-	</section>
 
-	<section class="heigh cont5 clearfix">
+		<?php get_template_part('inc/kyri');?>
+	</article>
+
+	<article class="heigh cont5 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/gusi');?>
-	</section>
+	</article>
 
-	<section class="heigh cont6 clearfix">
+	<article class="heigh cont6 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/pavlin');?>
-	</section>
+	</article>
 
-	<section class="heigh cont7 clearfix">
+	<article class="heigh cont7 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/fazan');?>
-	</section>
+	</article>
  <span id="cont8"></span>
-	<section class="heigh cont8 clearfix">
+	<article class="heigh cont8 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/pitomnik');?>
-	 
-	</section>
+
+	</article>
 
 <?php get_sidebar(); // Подключаем сайдбар ?>
 <?php get_footer(); // Подключаем футер ?>

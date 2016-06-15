@@ -17,7 +17,7 @@
 		);
 	 $query = new WP_Query($args); ?>
 	
-	 <h3><a href="<?php echo get_category_link(3); ?>">Водоплавающая птица</a></h3>
+	 <header><a href="<?php echo get_category_link(3); ?>">Водоплавающая птица</a></header>
 		<?php while ( $query->have_posts()) : $query->the_post(); ?>
 <div class="gusi">
 	<div class="gusiimg">

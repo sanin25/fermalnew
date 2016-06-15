@@ -75,7 +75,7 @@ html, body {
   overflow: hidden;
 }
 
-section {
+article {
   width: 100%;
   max-width: 1920px;
   min-width: 800px;
@@ -440,11 +440,11 @@ section {
   bottom: -245px;
   z-index: 0;
 }
-.gusibody h3, .pavlinbody h3, .kyribody h3, .category h3 {
+.gusibody header, .pavlinbody header, .kyribody header, .category header {
   position: relative;
   margin-top: 20px;
 }
-.gusibody h3 a, .pavlinbody h3 a, .kyribody h3 a, .category h3 a {
+.gusibody header a, .pavlinbody header a, .kyribody header a, .category header a {
   text-align: center;
   background: rgba(178, 171, 171, 0.51);
   clear: both;
@@ -455,7 +455,7 @@ section {
   position: relative;
   margin-bottom: 50px;
 }
-.gusibody h3 a:hover, .pavlinbody h3 a:hover, .kyribody h3 a:hover, .category h3 a:hover {
+.gusibody header a:hover, .pavlinbody header a:hover, .kyribody header a:hover, .category header a:hover {
   color: #13007A;
 }
 .gusibody h4, .pavlinbody h4, .kyribody h4, .category h4 {
@@ -480,7 +480,7 @@ section {
 
 .gusi, .pavlin, .kyri, .fazan, .category .cat {
   margin-top: 50px;
-  border: 1px solid #919995;
+  border: 1px solid white;
   width: 310px;
   float: left;
   margin-left: 15px;
