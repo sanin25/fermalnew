@@ -31,7 +31,7 @@
   }
 
   .cont8 {
-    background: url(../img/query/cont8.jpg) !important;
+    background: url(../img/query/cont8.png) !important;
     background-size: cover !important;
   }
 }
@@ -262,8 +262,7 @@ article {
 }
 
 .cont8 .bcg {
-  background: url(../img/cont8.jpg);
-  background-size: cover;
+  background: url(../img/cont8.png);
 }
 
 .bxslider {
@@ -478,7 +477,7 @@ article {
   color: #13007A;
 }
 
-.gusi, .pavlin, .kyri, .fazan, .category .cat {
+.gusi, .pavlin, .kyri, .fazan {
   margin-top: 50px;
   border: 1px solid white;
   width: 310px;
@@ -497,10 +496,10 @@ article {
   opacity: 0;
 }
 
-.gusiimg, .pavlinimg, .kyriimg, .category .cat .catimg {
+.gusiimg, .pavlinimg, .kyriimg {
   overflow: hidden;
 }
-.gusiimg img, .pavlinimg img, .kyriimg img, .category .cat .catimg img {
+.gusiimg img, .pavlinimg img, .kyriimg img {
   width: 100%;
   height: 230px;
   display: block;
@@ -510,21 +509,21 @@ article {
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
-.gusiimg img:hover, .pavlinimg img:hover, .kyriimg img:hover, .category .cat .catimg img:hover {
+.gusiimg img:hover, .pavlinimg img:hover, .kyriimg img:hover {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
 
-.gusitext, .pavlintext, .kyritext, .category .cat .cattext {
+.gusitext, .pavlintext, .kyritext {
   position: relative;
   margin-top: -13px;
   padding: 18px;
   background: url(../img/cont2.jpg) 0 0 repeat;
   height: 100%;
 }
-.gusitext h2 a, .pavlintext h2 a, .kyritext h2 a, .category .cat .cattext h2 a {
+.gusitext h2 a, .pavlintext h2 a, .kyritext h2 a {
   color: #0E5505;
   font-size: 77%;
 }
@@ -969,52 +968,23 @@ article {
   position: relative;
 }
 
-.pitomnikimg {
-  float: left;
-  width: 50%;
-}
 .pitomnikimg img {
-  margin-left: 20px;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
   -moz-box-shadow: 0px 0px 31px -2px black;
   -webkit-box-shadow: 0px 0px 31px -2px black;
   box-shadow: 0px 0px 31px -2px black;
-  margin-left: 20px;
   width: 100%;
-  height: 450px;
-  border: 1px solid blue;
+  height: 250px;
+  z-index: 1;
+  position: relative;
 }
 
 .pitomniktext {
-  float: right;
   background: #fbf4f4;
-  margin-right: 63px;
-  margin-top: 4%;
-  padding: 5px 12px 0 17px;
-  width: 30%;
-  height: 300px;
+  font-size: 71%;
   word-break: break-all;
   -moz-box-shadow: 0px 10px 31px -2px black;
   -webkit-box-shadow: 0px 10px 31px -2px black;
   box-shadow: 0px 10px 31px -2px black;
-}
-.pitomniktext .more {
-  -moz-box-shadow: 0px 10px 31px -20px black;
-  -webkit-box-shadow: 0px 10px 31px -20px black;
-  box-shadow: 0px 10px 31px -20px black;
-  text-align: center;
-  margin: 2px;
-  color: #1C3306;
-  background: rgba(216, 208, 208, 0.41);
-  border: 1px dotted #AB9595;
-  font-family: sans-serif;
-  font-size: 100%;
-}
-.pitomniktext .more:hover {
-  color: #3e6408;
-  background: rgba(94, 86, 86, 0.41);
 }
 .pitomniktext h2 {
   text-align: center;
@@ -1023,45 +993,44 @@ article {
   color: #0e5505;
 }
 
+.pitbg {
+  width: 250px;
+  height: 250px;
+  z-index: 15;
+  opacity: 1;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  position: absolute;
+}
+.pitbg:hover {
+  background: none !important;
+  opacity: 0;
+}
+
 .pitomnikbody {
   width: 100%;
   min-width: 700px;
 }
-.pitomnikbody .pitomnikcarusel .bx-controls-direction {
-  width: 12%;
-  margin: 22px;
-  padding: 3px 0px 3px 22px;
-  position: relative;
-  top: -80px;
-  right: -78%;
-  z-index: 100;
+.pitomnikbody .pitomnikbox {
+  float: left;
+  width: 291px;
+  margin-left: 30px;
+  padding: 20px;
 }
-.pitomnikbody .pitomnikcarusel .bx-controls-direction .bx-prev {
-  color: #1B1B33;
-  margin-right: 20px;
-  font-size: 100%;
-  padding: 7px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  font-family: cursive;
-  border: 1px solid #9E6A6A;
+.pitomnikbody .pitomnikbox .pitomnikbg1 {
+  background: url(../img/pitbg/1.png) no-repeat 0 0;
 }
-.pitomnikbody .pitomnikcarusel .bx-controls-direction .bx-prev:hover {
-  background: rgba(163, 160, 84, 0.82);
+.pitomnikbody .pitomnikbox .pitomnikbg2 {
+  background: url(../img/pitbg/2.png) no-repeat 0 0;
 }
-.pitomnikbody .pitomnikcarusel .bx-controls-direction .bx-next {
-  color: #1B1B33;
-  font-size: 100%;
-  padding: 7px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  font-family: cursive;
-  border: 1px solid #9E6A6A;
-}
-.pitomnikbody .pitomnikcarusel .bx-controls-direction .bx-next:hover {
-  background: rgba(163, 160, 84, 0.82);
+.pitomnikbody .pitomnikbox .pitomnikbg3 {
+  background: url(../img/pitbg/3.png) no-repeat 0 0;
 }
 
 .hr {
@@ -1514,8 +1483,22 @@ ul.bxslider {
   background: url(../img/bg-h1.png) 0 0 repeat;
 }
 .category .cat {
-  visibility: visible !important;
   background: url(../img/bg-plit.jpg) 0 0 repeat;
+  margin-top: 50px;
+  border: 1px solid white;
+  width: 310px;
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 45px;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px 4px 4px 4px;
+  word-wrap: break-word;
+  min-height: 200px;
+  visibility: visible !important;
   height: 430px;
 }
 .category .cat hr {
@@ -1537,9 +1520,36 @@ ul.bxslider {
   font-family: cursive;
   line-height: 0.9;
 }
+.category .cat .catimg {
+  overflow: hidden;
+}
+.category .cat .catimg img {
+  width: 100%;
+  height: 230px;
+  display: block;
+  overflow: hidden;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+.category .cat .catimg img:hover {
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
 .category .cat .cattext {
+  position: relative;
+  margin-top: -13px;
+  padding: 18px;
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+.category .cat .cattext h2 a {
+  color: #0E5505;
+  font-size: 77%;
 }
 .category .cat .cattext .more {
   margin-top: 8px;

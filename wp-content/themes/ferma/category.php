@@ -10,7 +10,7 @@
 get_header(); // Подключаем хедер ?>
 
 	<section class="category heigh2 clearfix">
-	<?php if ( function_exists('yoast_breadcrumb') ) 
+	<?php if ( function_exists('yoast_breadcrumb') )
 {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 
 <h1><?php wp_title(''); // Заголовок категории ?></h1>
@@ -18,6 +18,7 @@ get_header(); // Подключаем хедер ?>
 			<div class="wrapper clearfix">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
 				<div class="cat">
+					<div class="catbg"></div>
 					<h2><?php the_title(); ?></h2>
 					<hr>
 						<div class="catimg">

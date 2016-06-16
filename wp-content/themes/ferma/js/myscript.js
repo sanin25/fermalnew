@@ -55,8 +55,6 @@ jQuery(document).ready(function($) {
 
             loadingProgress = (loadedCount / imagesToLoad);
 
-            console.log(loadedCount);
-
             // GSAP timeline for our progress bar
             TweenLite.to(progressTl, 0.7, {progress: loadingProgress, ease: Linear.easeNone});
 
@@ -254,6 +252,8 @@ jQuery(document).ready(function($) {
 
             }
         );
+
+
     }else{
         $('#preloader').css({"display": 'none'});
     }
@@ -303,19 +303,25 @@ jQuery(document).ready(function($) {
 
     });
 
-    /*Слайден Питомника*/
-    $('.pitomnik').bxSlider({
-        mode:"fade",
-        minSlides: 1,
-        controls: true,
-        wrapperClass: 'pitomnikcarusel',
-        auto: true,
-        nextText: 'Вперед',
-        prevText:'Назад',
-        pager:false,
-        pause:5000
+    var pitomnik = new TimelineMax();
+    $('pitomnikbg1').hover();
+    var lineKyri = Kyri
+        .staggerTo($('.kyriimg, .kyritext'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
 
-    });
+
+    /*    /!*Слайден Питомника*!/
+        $('.pitomnik').bxSlider({
+            mode:"fade",
+            minSlides: 1,
+            controls: true,
+            wrapperClass: 'pitomnikcarusel',
+            auto: true,
+            nextText: 'Вперед',
+            prevText:'Назад',
+            pager:false,
+            pause:5000
+
+        });*/
 
     /*Отправка письма*/
 

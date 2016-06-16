@@ -36,7 +36,7 @@
 }
 
  .category{
- 	@extend .gusibody; 
+ 	@extend .gusibody;
  	width: 100%;
 	 height: 100%;
  	background:url(../img/bg-cat.png) 0 0 repeat;
@@ -52,10 +52,22 @@
  			background: url(../img/bg-h1.png) 0 0 repeat;
  		}
  	.cat{
- 		@extend .gusi ;
+		background: url(../img/bg-plit.jpg) 0 0 repeat;
+		margin-top: 50px;
+		border: 1px solid rgba(255, 255, 255, 1);
+		width: 310px;
+		float: left;
+		margin-left: 15px;
+		margin-bottom: 45px;
+		overflow: hidden;
+		text-align: center;
+		z-index: 1;
+		@include border-radius(4px 4px 4px 4px);
+		word-wrap: break-word;
+		min-height: 200px;
  		visibility: visible!important;
- 		background: url(../img/bg-plit.jpg) 0 0 repeat;
  		height: 430px;
+
  		hr{
  			position: relative;
  			top: -13px;
@@ -72,10 +84,31 @@
  			line-height: 0.9;
  		}
  		.catimg{
-			@extend .gusiimg;
+			img {
+				width: 100%;
+				height: 230px;
+				display: block;
+				overflow: hidden;
+				@include transition(all 1s ease-out);
+
+				&:hover {
+					@include transform(scale(1.2));
+				}
+			}
+			overflow: hidden;
  		}
  		.cattext{
- 			@extend .gusitext;
+			position: relative;
+			margin-top: -13px;
+			padding: 18px;
+			//background: url(../img/cont2.jpg)0 0 repeat;
+			height: 100%;
+			h2 {
+				a {
+					color: #0E5505;
+					font-size: 77%;
+				}
+			}
  			margin:0;
  			padding: 0;
  			.more{
