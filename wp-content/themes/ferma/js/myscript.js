@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
     setHeiHeight2();
 
     setTimeout(setAuto, 1000);
-    $(window).resize(setHeiHeight2)
+    $(window).resize(setHeiHeight2);
 
     /*Конец высоты*/
 
@@ -151,10 +151,11 @@ jQuery(document).ready(function($) {
             logoScroll.remove();
         });
         /*Салайд 4 kyri*/
+        var idKyri = $('.kyriimg, .kyritext');
 
         var Kyri = new TimelineMax();
         var lineKyri = Kyri
-            .staggerTo($('.kyriimg, .kyritext'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
+            .staggerTo(idKyri, 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
 
 
         /* .to($('.kyribody'), 3, {autoAlpha:1,rotationY:"+=360deg",  ease: Elastic.easeOut.config(1, 0.3), y: 0 },"-=0.2");*/
@@ -241,6 +242,27 @@ jQuery(document).ready(function($) {
         fazaninScroll.on("enter", function (event) {
             fazaninScroll.remove();
         });
+
+
+        /*Питомник*/
+/*
+        var pit = new TimelineMax();
+        var pitommikLine = pit
+            .to($('#cont8 .bgc'), 1, {backgroundPositionY:  90});*/
+
+
+        var pitScroll = new ScrollMagic.Scene({
+            triggerElement: '#cont8',
+            triggerHook: 0.5,
+            offset: 0,
+            duration: "400%"
+        })
+            //.setTween(pitommikLine)
+           // .addIndicators()
+            .setClassToggle('.fade', 'fade-in')
+            .addTo(controller);
+
+        /*Конец питомник*/
         /*Текст к картинкам контакты*/
 
 
@@ -306,7 +328,7 @@ jQuery(document).ready(function($) {
     var pitomnik = new TimelineMax();
     $('pitomnikbg1').hover();
     var lineKyri = Kyri
-        .staggerTo($('.kyriimg, .kyritext'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
+        .staggerTo($('.kyri'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
 
 
     /*    /!*Слайден Питомника*!/
