@@ -45,7 +45,6 @@ get_header(); // Подключаем хедер?>
 	</article>
  <div id="cont8">
 	 <div class="bgc"></div>
-
 	 <div class="fade">
 	 <img id="logopitom"  src="<?php echo get_template_directory_uri()?>/img/pitomniklogo.svg" alt="">
 	 </div>

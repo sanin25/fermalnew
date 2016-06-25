@@ -96,7 +96,7 @@ jQuery(document).ready(function($) {
 
         /*Затемняем в конце */
 
-        var cants = [".cont1", ".cont3", ".cont4", ".cont5", ".cont6", ".cont7", ".cont8"];
+        var cants = [".cont1", ".cont3", ".cont4", ".cont5", ".cont6", ".cont7"];
 
         cants.forEach(function (cant, index) {
 
@@ -142,14 +142,13 @@ jQuery(document).ready(function($) {
         var logoScroll = new ScrollMagic.Scene({
             triggerElement: '.cont2',
             triggerHook: 0,
+            reverse: false,
             offset: "-200px"
         })
             .setTween(lineAbout)
             .addTo(controller);
 
-        logoScroll.on("enter", function (event) {
-            logoScroll.remove();
-        });
+
         /*Салайд 4 kyri*/
         var idKyri = $('.kyriimg, .kyritext');
 
@@ -157,36 +156,30 @@ jQuery(document).ready(function($) {
         var lineKyri = Kyri
             .staggerTo(idKyri, 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
 
-
-        /* .to($('.kyribody'), 3, {autoAlpha:1,rotationY:"+=360deg",  ease: Elastic.easeOut.config(1, 0.3), y: 0 },"-=0.2");*/
         var kyriScroll = new ScrollMagic.Scene({
             triggerElement: '.cont4',
             triggerHook: 0,
+            reverse: false,
             offset: -250
         })
             .setTween(lineKyri)
             .addTo(controller);
 
-        kyriScroll.on("enter", function (event) {
-            kyriScroll.remove();
-        });
         /*Салайд 5 about*/
 
         var gusy = new TimelineMax();
         var lineGusy = gusy
-            .staggerTo($('.gusi'), 1, {y: 0, x: 0, autoAlpha: 1, autoAlpha: 1, ease: Bounce.easeOut}, 0.5);
+            .staggerTo($('.gusi'), 1, {y: 0, x: 0, autoAlpha: 1, ease: Bounce.easeOut}, 0.5);
 
         var gusyiScroll = new ScrollMagic.Scene({
             triggerElement: '.cont5',
             triggerHook: 0,
+            reverse: false,
             offset: -350
         })
             .setTween(lineGusy)
             .addTo(controller);
 
-        gusyiScroll.on("enter", function (event) {
-            gusyiScroll.remove();
-        });
 
 
         var paraGusy = new TimelineMax();
@@ -200,6 +193,7 @@ jQuery(document).ready(function($) {
             triggerElement: '.cont5',
             triggerHook: 0,
             duration: "200%",
+            reverse: false,
             offset: -550
         })
             .setTween(paraG)
@@ -215,14 +209,11 @@ jQuery(document).ready(function($) {
         var pavlinScroll = new ScrollMagic.Scene({
             triggerElement: '.cont6',
             triggerHook: 0,
+            reverse: false,
             offset: -250
         })
             .setTween(linePavlin)
             .addTo(controller);
-
-        pavlinScroll.on("enter", function (event) {
-            pavlinScroll.remove();
-        });
 
         /*Слайд 7*/
 
@@ -234,14 +225,11 @@ jQuery(document).ready(function($) {
         var fazaninScroll = new ScrollMagic.Scene({
             triggerElement: '.cont7',
             triggerHook: 0,
+            reverse: false,
             offset: -250
         })
             .setTween(lineFazan)
             .addTo(controller);
-
-        fazaninScroll.on("enter", function (event) {
-            fazaninScroll.remove();
-        });
 
 
         /*Питомник*/
