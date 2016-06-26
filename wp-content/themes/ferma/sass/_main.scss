@@ -482,10 +482,26 @@ article {
 		    position: relative;
 		    top: 37px;
 	}
-	.gallery-item img{
-		@include border-radius(50px);
-		border: 2px solid rgb(60, 88, 57);
-	}
+		figure{
+	display: inline-block;
+    vertical-align: top;
+    margin: 8px;
+	  div{
+
+		  a {
+			  margin: 0 auto;
+			  text-align: center;
+			  display: block;
+		  }
+		  img {
+			  border: 2px solid rgba(35, 160, 19, 0.42);
+			  border-radius: 26px;
+			  padding: 2px;
+			  float: left;
+
+		  }
+	  }
+  }
 }
 #obl2 {
 	left: 250px;
@@ -842,20 +858,17 @@ article {
 	font-size: 136%;
 
 }
-#gallery-2{
+#gallery-2, .gallery-1{
 	margin: 0 auto;
 	position: relative;
 	display: block;
 	width:80%;
   margin-bottom:46px !important;
-  > a{
-    img{
-      float: left;
-    }
-  }
-  dl{
-	  float: right;
-	  dt {
+	figure{
+	display: inline-block;
+    vertical-align: top;
+    margin: 8px;
+	  div{
 
 		  a {
 			  margin: 0 auto;
@@ -963,6 +976,8 @@ article {
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	display: table;
+
 }
 .depth-2{
 	background: #DEDEDE;
@@ -990,6 +1005,7 @@ article {
   border: 2px solid rgba(35, 160, 19, 0.42);
   border-radius: 26px;
   padding: 2px;
+  width: 150px;
 }
 #comment-image-reloaded-wrapper{
   margin: 10px 0 10px 73px;

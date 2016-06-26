@@ -4,6 +4,7 @@
   * https://github.com/fermerjeck
  * @package WordPress
  * @subpackage fermerjeck
+ * Template Name: ferma
  */
 get_header(); // Подключаем хедер?>
     <article class="heigh2 cont1 clearfix">

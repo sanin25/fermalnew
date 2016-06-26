@@ -263,6 +263,26 @@ jQuery(document).ready(function($) {
             }
         );
 
+        var pitomnik = new TimelineMax();
+        $('pitomnikbg1').hover();
+        var lineKyri = Kyri
+            .staggerTo($('.kyri'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
+
+
+        /*    /!*Слайден Питомника*!/
+         $('.pitomnik').bxSlider({
+         mode:"fade",
+         minSlides: 1,
+         controls: true,
+         wrapperClass: 'pitomnikcarusel',
+         auto: true,
+         nextText: 'Вперед',
+         prevText:'Назад',
+         pager:false,
+         pause:5000
+
+         });*/
+
 
     }else{
         $('#preloader').css({"display": 'none'});
@@ -313,25 +333,6 @@ jQuery(document).ready(function($) {
 
     });
 
-    var pitomnik = new TimelineMax();
-    $('pitomnikbg1').hover();
-    var lineKyri = Kyri
-        .staggerTo($('.kyri'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
-
-
-    /*    /!*Слайден Питомника*!/
-        $('.pitomnik').bxSlider({
-            mode:"fade",
-            minSlides: 1,
-            controls: true,
-            wrapperClass: 'pitomnikcarusel',
-            auto: true,
-            nextText: 'Вперед',
-            prevText:'Назад',
-            pager:false,
-            pause:5000
-
-        });*/
 
     /*Отправка письма*/
 

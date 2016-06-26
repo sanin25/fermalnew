@@ -138,4 +138,6 @@ add_action( 'admin_menu', 'remove_menus' );
     add_action('wp_before_admin_bar_render', 'wph_new_toolbar');
 }
 
+add_theme_support( 'html5', array(  'gallery') );
+
 ?>

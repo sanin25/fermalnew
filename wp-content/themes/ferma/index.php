@@ -2,6 +2,7 @@
 /**
  * Шаблон made fermerjeck
  * https://github.com/fermerjeck
+ * Template Name: ferma
  * @package WordPress
  * @subpackage fermerjeck
  */
