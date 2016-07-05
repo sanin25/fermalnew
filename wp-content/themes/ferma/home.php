@@ -44,13 +44,11 @@ get_header(); // Подключаем хедер?>
         <div class="bcg"></div>
 		<?php get_template_part('inc/fazan');?>
 	</article>
- <div id="cont8">
-	 <div class="bgc"></div>
-	 <div class="fade">
-	 <img id="logopitom"  src="<?php echo get_template_directory_uri()?>/img/pitomniklogo.svg" alt="">
-	 </div>
- </div>
 	<article class="heigh cont8 clearfix">
+		<div class="fade">
+			<img id="logopitom"  src="<?php echo get_template_directory_uri()?>/img/pitomniklogo.svg" alt="">
+			<hr class="hr">
+		</div>
         <div class="bcg"></div>
 		<?php get_template_part('inc/pitomnik');?>
 

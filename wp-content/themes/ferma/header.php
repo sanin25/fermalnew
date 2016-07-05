@@ -48,9 +48,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body >
-
-<div id="preloader">
-	<div class="txt">
+<div id="hidden">
+	<div id="txt">
 		<p class="txt-perc">0%</p>
 		<div class="progress"><span></span></div>
 	</div>

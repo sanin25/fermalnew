@@ -9,6 +9,7 @@ register_nav_menus( array( // Регистрируем 2 меню
 	'top' => 'Верхнее меню',
 	'left' => 'Нижнее'
 ) );
+add_theme_support( 'html5', array(  'gallery') );
 add_theme_support('post-thumbnails'); // Включаем поддержку миниатюр
 set_post_thumbnail_size(254, 190); // Задаем размеры миниатюре
 
@@ -16,7 +17,7 @@ if ( function_exists('register_sidebar') )
 register_sidebar(); // Регистрируем сайдбар
 /*Подключаю JS*/
 
-    function addAllScriptsAndCss(){
+    function add_all_scripts_and_css(){
         /*Scripts*/
 
 
@@ -38,8 +39,8 @@ register_sidebar(); // Регистрируем сайдбар
         wp_enqueue_script( 'my_TextPlugin', get_template_directory_uri().'/js/debug.addIndicators.js',array('jquery'));
 
         wp_enqueue_script( 'my_gsap', get_template_directory_uri().'/js/animation.gsap.js',array('jquery'));
-
         wp_enqueue_script( 'my-script', get_template_directory_uri().'/js/myscript.js',array('jquery'));
+
 
         /*Css*/
         
@@ -52,7 +53,18 @@ register_sidebar(); // Регистрируем сайдбар
 
     }
 
-    add_action('wp_enqueue_scripts', 'addAllScriptsAndCss');
+    add_action('wp_enqueue_scripts', 'add_all_scripts_and_css');
+
+add_action('wp', 'add_home_script');
+
+function add_home_script(){
+    if( is_home() )
+        add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+}
+
+function my_scripts_method() {
+    wp_enqueue_script( 'add_home', get_template_directory_uri().'/js/home.js',array('jquery','my-script'));
+}
 
 
     function segment_more($more) {
@@ -138,6 +150,5 @@ add_action( 'admin_menu', 'remove_menus' );
     add_action('wp_before_admin_bar_render', 'wph_new_toolbar');
 }
 
-add_theme_support( 'html5', array(  'gallery') );
 
 ?>

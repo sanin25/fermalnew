@@ -47,6 +47,9 @@ $color_border : rgba(68, 91, 158, 0.86);
 	text-decoration: none;
     list-style-type:none;
 }
+#hidden{
+	display: none;
+}
 html,body {
 	background-color: #212121;
 	color: #1a1a1a;
@@ -113,9 +116,10 @@ article {
 	height: 100%;
 	z-index: 101;
 	background: url("../img/load.svg") center center no-repeat;
-  background-color: #FBFAF5;
-	color: #003d07; }
-#preloader .txt {
+  	background-color: #FBFAF5;
+	color: #003d07;
+}
+#preloader #txt {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -140,10 +144,7 @@ article {
 	height: 100%;
 	background-color: #003D07;
 }
-#preloader.is-hidden {
-	visibility: hidden;
-  display: none;
-	opacity: 0; }
+
 
 .cont1 {
   .bcg{
@@ -241,17 +242,28 @@ article {
 .cont7 .bcg{
 	background: url(../img/cont7.jpeg);
 	background-size: cover;
-	border-bottom: 2px solid #d6c823;
 
 }
 
 
-#cont8{
-
-	.fade{
+.cont8 {
+	    border-top: 8px solid #725438;
+		.fade{
 		opacity: 0;
+		float: left;
 		@include transform(translateY(80px));
 		@include transition(all ease-out 1s);
+		width: 100%;
+		.hr {
+    position: relative;
+    top: -11px;
+    border: 0;
+    height: 4px;
+    background-image: -webkit-linear-gradient(left, transparent, #6d700e, transparent);
+    background-image: -moz-linear-gradient(left, transparent, #43687b, transparent);
+    background-image: -ms-linear-gradient(left, transparent, #43687b, transparent);
+    background-image: -o-linear-gradient(left, transparent, #43687b, transparent);
+}
 			}
 	.fade.fade-in{
 		@include transform(translateY(0px));
@@ -267,21 +279,7 @@ article {
 		position: relative;
 
 	}
-	.bgc{
 
-		background: url("../img/pitomnikbgc.png") no-repeat;
-		background-position: 50% 0px;
-		background-size: cover;
-		width: 100%;
-		height: 100%;
-		display: block;
-		position: absolute;
-
-	}
-	border-bottom: 3px solid #7b7422;
-
-}
-.cont8 {
   .bcg {
     background: url(../img/cont2.jpg) repeat;
     
@@ -306,13 +304,18 @@ article {
     text-align: center;
     position: relative;
     zoom: 1;
-   @include border-radius(4px);
     word-wrap: break-word;
     height: 210px;
     min-height: 200px;
-    img{
+     border: 1px solid rgba(218, 194, 24, 0.37);
+     @include box-shadow(0px 33px 42px -2px rgba(114,84,56,1));
+     margin-bottom: 50px;
+
+    a{
+    	img {
     	width: 100%;
     	height:210px;
+    }
     	display: block;
     	@include transition(all 1s ease-out);
     	@include transform(scale(1.2));
@@ -323,20 +326,18 @@ article {
       	.pitlink {
          bottom: 90px;
         color: #1e1e1e;
-        font-size: 16px;
         left: 0;
         line-height: 21px;
-        padding: 2px 2px 2px 4px;
+        padding: 10px;
         position: absolute;
         text-align: center;
         text-shadow: -1px -1px 0 #f5f5f5, 1px -1px 0 #f5f5f5, -1px 1px 0 #f5f5f5, 1px 1px 0 #f5f5f5;
         width: 100%;
         z-index: 20;
-	    background: rgba(125, 178, 9, 0.57);
+	    background: rgba(111, 63, 96, 0.51);
         a {
           display: block;
-          padding: 10px;
-          font-size: 100%;
+          font-size: 89%;
           font-family: cursive;
           color: #29083e;
           text-align: center;
@@ -571,7 +572,6 @@ article {
 }
 .gusi {
 	margin-top: 50px;
-	border: 1px solid rgba(255, 255, 255, 1);
 	width: 310px;
 	float: left;
 	margin-left: 15px;
@@ -808,6 +808,7 @@ article {
 }
 .singl{
 	background:url(../img/bg-cat.png) 0 0 repeat;
+	width:100%;
 .wrap{
 	position: relative;
 	width: 84%;
