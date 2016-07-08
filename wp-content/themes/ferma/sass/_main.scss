@@ -2,6 +2,15 @@ $color_link : rgb(14, 85, 5);
 $color_hover :  #13007A;
 $color_border : rgba(68, 91, 158, 0.86);
 
+  @font-face {
+    font-family: albionic; /* Имя шрифта */
+    src: url(../fonts/albionic.ttf); /* Путь к файлу со шрифтом */
+   }
+    @font-face {
+    font-family: GroticLtNr; /* Имя шрифта */
+    src: url(../fonts/GroticLtNr.ttf); /* Путь к файлу со шрифтом */
+   }
+
 @media screen and (max-width: 768px) {
 	.cont1{
 		background: url(../img/query/cont1.jpg) !important;
@@ -81,7 +90,7 @@ html,body {
 article {
 	width: 100%;
 	//max-width: 1920px;
-	min-width: 800px;
+	min-width:768px;
     min-height: 100%;
 	height: auto;
 	margin: 0 auto;
@@ -271,7 +280,7 @@ article {
 	}
 
 	position: relative;
-	min-width: 800px;
+	min-width: 768px;
 	#logopitom{
 		display: block;
 		height: 371px;
@@ -399,7 +408,6 @@ article {
 	margin: 0 auto;
 	padding: 60px;
 	display: block;
-	width: 89%;
 	h3 {
 		text-align: center;
 		color: #0E5505;
@@ -471,6 +479,14 @@ article {
 		 @include border-radius(5px);
 		 margin-bottom:20px;
 		 float:left;
+		 width: 34%;
+    max-width: 600px;
+	}
+	p{
+		position: relative;
+		top: -237px;
+		width: 50%;
+		left: 40%;
 	}
 	h2{
 			text-align: center;
@@ -486,7 +502,11 @@ article {
 		figure{
 	display: inline-block;
     vertical-align: top;
-    margin: 8px;
+   margin: 0 auto;
+    position: relative;
+    display: block;
+    bottom: 198px;
+    left: -10%;
 	  div{
 
 		  a {
@@ -535,8 +555,9 @@ article {
 	header {
        position: relative;
        a {
+       	font-family: albionic, sans-serif,Arial;
          text-align: center;
-         background: rgba(178, 171, 171, 0.51);
+         background: rgba(178, 171, 171, 0.81);
          clear: both;
          display: block;
          color: $color_link;
@@ -555,7 +576,7 @@ article {
     clear: both;
     a {
       text-align: center;
-      background: rgba(178, 171, 171, 0.51);
+      background: rgba(178, 171, 171, 0.85);
       clear: both;
       display: block;
       color: $color_link;
@@ -699,8 +720,10 @@ article {
 	}
 	h3 {
 		&:first-child {
+			font-family: albionic, sans-serif,Arial;
+			font-size:140%;
 			text-align: center;
-			background: rgba(178, 171, 171, 0.51);
+			background: rgba(178, 171, 171, 0.82);
 			margin: 0 auto;
 			width: 50%;
 			margin-bottom: 50px;
@@ -708,12 +731,14 @@ article {
 		}
 		&:last-child {
 			text-align: center;
-			background: rgba(178, 171, 171, 0.51);
-			margin-bottom: 50px;
+			background: rgba(178, 171, 171, 0.82);
+			margin: 57px 0 57px 0;
+			font-family: albionic, sans-serif,Arial;
+			font-size: 110%;
+
 		}
 		a {
 			color: #0E5505;
-			font-size: 173%;
 			padding: 5px;
 			&:hover {
 				color: #13007A;
@@ -809,6 +834,7 @@ article {
 .singl{
 	background:url(../img/bg-cat.png) 0 0 repeat;
 	width:100%;
+	min-width: 768px;
 .wrap{
 	position: relative;
 	width: 84%;
@@ -1219,4 +1245,72 @@ article {
 	float: left;
 	margin: 8px;
 
+}
+.bottommenu {
+	width:100%;
+	background-color: rgb(134, 123, 113);
+	min-width: 768px;
+	.catmenu {
+		line-height: 0.5;
+		width: 100%;
+		padding-top: 30px;
+		    padding-left: 5%;
+		background: rgb(192, 192, 192);
+		> li {
+			padding: 5px;
+			margin: 5px;
+			text-align: center;
+			display: inline-block;
+		    vertical-align: top;
+			>a{
+				font-family: albionic, sans-serif,Arial;
+				color: $color_link;
+				font-size: 101%;
+				font-style: normal;
+				font-weight: bold;
+				z-index: 2;
+				letter-spacing:2.0px;
+				
+				.hr{
+					position: relative;
+						top: 6px;
+						border: 0;
+						height: 2px;
+						z-index: 0;
+						background-image: -webkit-linear-gradient(left, transparent, #dce7ec, transparent);
+						background-image: -moz-linear-gradient(left, transparent, #43687b, transparent);
+						background-image: -ms-linear-gradient(left, transparent, #43687b, transparent);
+						background-image: -o-linear-gradient(left, transparent, #43687b, transparent);
+				}
+				
+			}
+			ul {
+				text-align: left;
+			    border-right: 1px dashed #fefefe;
+				li{
+					padding:5px;
+					&:hover{
+					transform: scale(1.01);
+					background: rgba(251, 251, 251, 0.34);
+					border-radius: 6px;
+							a{
+
+							color:$color_link;
+							}
+						}
+					
+					 &:first-child{
+					 margin-top:23px;
+					 }
+					a{
+						font-size: 90%;
+						letter-spacing:1.2px;
+						font-family: GroticLtNr, sans-serif,Arial;
+						color: #000;
+						
+					}
+				}
+			}
+		}
+	}
 }

@@ -58,5 +58,6 @@ echo paginate_links( array(
 ) );
 ?>
 </section>
+
 <?php get_sidebar(); // Подключаем сайдбар ?>
 <?php get_footer(); // Подключаем футер ?>

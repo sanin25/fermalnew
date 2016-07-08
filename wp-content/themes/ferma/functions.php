@@ -7,7 +7,8 @@
  */
 register_nav_menus( array( // Регистрируем 2 меню
 	'top' => 'Верхнее меню',
-	'left' => 'Нижнее'
+	'left' => 'Нижнее',
+	'pitomnik' => 'Питомник верх'
 ) );
 add_theme_support( 'html5', array(  'gallery') );
 add_theme_support('post-thumbnails'); // Включаем поддержку миниатюр

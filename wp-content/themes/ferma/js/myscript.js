@@ -166,4 +166,9 @@ jQuery(document).ready(function($) {
     });
 
 
+$('ul.sub-menu li').after("<br>");
+
+    $('ul#menu-pitomnik > li > a').append("<p class='hr'></p>");
+
+    console.log($('ul.menu-pitomnik li > a').text());
 });

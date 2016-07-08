@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@font-face {
+  font-family: albionic;
+  /* ╨Ш╨╝╤П ╤И╤А╨╕╤Д╤В╨░ */
+  src: url(../fonts/albionic.ttf);
+  /* ╨Я╤Г╤В╤М ╨║ ╤Д╨░╨╣╨╗╤Г ╤Б╨╛ ╤И╤А╨╕╤Д╤В╨╛╨╝ */
+}
+@font-face {
+  font-family: GroticLtNr;
+  /* ╨Ш╨╝╤П ╤И╤А╨╕╤Д╤В╨░ */
+  src: url(../fonts/GroticLtNr.ttf);
+  /* ╨Я╤Г╤В╤М ╨║ ╤Д╨░╨╣╨╗╤Г ╤Б╨╛ ╤И╤А╨╕╤Д╤В╨╛╨╝ */
+}
 @media screen and (max-width: 768px) {
   .cont1 {
     background: url(../img/query/cont1.jpg) !important;
@@ -85,7 +97,7 @@ html, body {
 
 article {
   width: 100%;
-  min-width: 800px;
+  min-width: 768px;
   min-height: 100%;
   height: auto;
   margin: 0 auto;
@@ -256,7 +268,7 @@ article {
 .cont8 {
   border-top: 8px solid #725438;
   position: relative;
-  min-width: 800px;
+  min-width: 768px;
 }
 .cont8 .fade {
   opacity: 0;
@@ -414,7 +426,6 @@ article {
   margin: 0 auto;
   padding: 60px;
   display: block;
-  width: 89%;
 }
 .about h3 {
   text-align: center;
@@ -494,6 +505,14 @@ article {
   border-radius: 5px;
   margin-bottom: 20px;
   float: left;
+  width: 34%;
+  max-width: 600px;
+}
+.textunber p {
+  position: relative;
+  top: -237px;
+  width: 50%;
+  left: 40%;
 }
 .textunber h2 {
   text-align: center;
@@ -509,7 +528,11 @@ article {
 .textunber figure {
   display: inline-block;
   vertical-align: top;
-  margin: 8px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  bottom: 198px;
+  left: -10%;
 }
 .textunber figure div a {
   margin: 0 auto;
@@ -558,8 +581,9 @@ article {
   margin-top: 20px;
 }
 .gusibody header a, .pavlinbody header a, .kyribody header a, .category header a {
+  font-family: albionic, sans-serif,Arial;
   text-align: center;
-  background: rgba(178, 171, 171, 0.51);
+  background: rgba(178, 171, 171, 0.81);
   clear: both;
   display: block;
   color: #0e5505;
@@ -578,7 +602,7 @@ article {
 }
 .gusibody h4 a, .pavlinbody h4 a, .kyribody h4 a, .category h4 a {
   text-align: center;
-  background: rgba(178, 171, 171, 0.51);
+  background: rgba(178, 171, 171, 0.85);
   clear: both;
   display: block;
   color: #0e5505;
@@ -734,8 +758,10 @@ article {
   margin: 0 auto;
 }
 .katalog h3:first-child {
+  font-family: albionic, sans-serif,Arial;
+  font-size: 140%;
   text-align: center;
-  background: rgba(178, 171, 171, 0.51);
+  background: rgba(178, 171, 171, 0.82);
   margin: 0 auto;
   width: 50%;
   margin-bottom: 50px;
@@ -743,12 +769,13 @@ article {
 }
 .katalog h3:last-child {
   text-align: center;
-  background: rgba(178, 171, 171, 0.51);
-  margin-bottom: 50px;
+  background: rgba(178, 171, 171, 0.82);
+  margin: 57px 0 57px 0;
+  font-family: albionic, sans-serif,Arial;
+  font-size: 110%;
 }
 .katalog h3 a {
   color: #0E5505;
-  font-size: 173%;
   padding: 5px;
 }
 .katalog h3 a:hover {
@@ -857,6 +884,7 @@ article {
 .singl {
   background: url(../img/bg-cat.png) 0 0 repeat;
   width: 100%;
+  min-width: 768px;
 }
 .singl .wrap {
   position: relative;
@@ -1308,6 +1336,70 @@ article {
   margin: 8px;
 }
 
+.bottommenu {
+  width: 100%;
+  background-color: #867b71;
+  min-width: 768px;
+}
+.bottommenu .catmenu {
+  line-height: 0.5;
+  width: 100%;
+  padding-top: 30px;
+  padding-left: 5%;
+  background: silver;
+}
+.bottommenu .catmenu > li {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+.bottommenu .catmenu > li > a {
+  font-family: albionic, sans-serif,Arial;
+  color: #0e5505;
+  font-size: 101%;
+  font-style: normal;
+  font-weight: bold;
+  z-index: 2;
+  letter-spacing: 2.0px;
+}
+.bottommenu .catmenu > li > a .hr {
+  position: relative;
+  top: 6px;
+  border: 0;
+  height: 2px;
+  z-index: 0;
+  background-image: -webkit-linear-gradient(left, transparent, #dce7ec, transparent);
+  background-image: -moz-linear-gradient(left, transparent, #43687b, transparent);
+  background-image: -ms-linear-gradient(left, transparent, #43687b, transparent);
+  background-image: -o-linear-gradient(left, transparent, #43687b, transparent);
+}
+.bottommenu .catmenu > li ul {
+  text-align: left;
+  border-right: 1px dashed #fefefe;
+}
+.bottommenu .catmenu > li ul li {
+  padding: 5px;
+}
+.bottommenu .catmenu > li ul li:hover {
+  transform: scale(1.01);
+  background: rgba(251, 251, 251, 0.34);
+  border-radius: 6px;
+}
+.bottommenu .catmenu > li ul li:hover a {
+  color: #0e5505;
+}
+.bottommenu .catmenu > li ul li:first-child {
+  margin-top: 23px;
+}
+.bottommenu .catmenu > li ul li a {
+  font-size: 90%;
+  letter-spacing: 1.2px;
+  font-family: GroticLtNr, sans-serif,Arial;
+  color: #000;
+}
+
 .kyri {
   opacity: 1 !important;
 }
@@ -1333,6 +1425,8 @@ article {
   width: 100%;
   color: #0e5505;
   background: url(../img/bg-h1.png) 0 0 repeat;
+  font-family: albionic, sans-serif,Arial;
+  font-size: 133%;
 }
 .category .cat {
   background: url(../img/bg-plit.jpg) 0 0 repeat;

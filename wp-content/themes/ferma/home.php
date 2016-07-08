@@ -53,6 +53,5 @@ get_header(); // Подключаем хедер?>
 		<?php get_template_part('inc/pitomnik');?>
 
 	</article>
-
 <?php get_sidebar(); // Подключаем сайдбар ?>
 <?php get_footer(); // Подключаем футер ?>
