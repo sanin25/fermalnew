@@ -10,11 +10,21 @@
 get_header(); // Подключаем хедер ?>
 
 	<section class="category heigh2 clearfix">
+
 	<?php if ( function_exists('yoast_breadcrumb') )
 {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 
 <h1><?php wp_title(''); // Заголовок категории ?></h1>
-				
+
+		<div class="contactpit">
+			<ul>
+				<li><i class="fa fa-phone" aria-hidden="true"></i> +38-067-600-10-66</li>
+				<li><i class="fa fa-phone" aria-hidden="true"></i> +38-099-759-93-94</li>
+				<hr>
+				<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс растение</li>
+				<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс птицы</li>
+			</ul>
+		</div>
 			<div class="wrapper clearfix">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
 				<div class="cat">

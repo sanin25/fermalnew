@@ -11,7 +11,7 @@
 	<h3><a href="<?php echo get_category_link(6); ?>">Жизнь на ферме</a></h3>
 	<ul class="bxslider">
 		<?php while ( $query->have_posts()) : $query->the_post(); ?>
-			<li>
+			<li id="liveinfarm">
 				<div class="txtmin"><?php the_title();?></div>
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(500,300));?>
 			</a>

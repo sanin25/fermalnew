@@ -2,7 +2,6 @@ jQuery(document).ready(function($) {
 
     $('img').addClass('responsive-img');
 
-    var  ie = BrowserDetect.browser == 'Explorer';
     jQuery.fn.exist = function() {
 
         return $(this).length;
@@ -71,15 +70,14 @@ jQuery(document).ready(function($) {
 
     /*Слайдер*/
 
-
-    $('.bxslider').bxSlider({
-        minSlides: 4,
-        maxSlides: 4,
-        slideWidth: 600,
-        slideMargin: 5,
-        ticker: true,
-        speed: 49000
-
+    $('.bxslider').owlCarousel({
+        items:4,
+        loop: true,
+		autoplay:true,
+        smartSpeed:2550,
+        navSpeed:1,
+        autoplayTimeout:80,
+        margin: 200
     });
 
     /*Отправка письма*/
@@ -100,54 +98,7 @@ jQuery(document).ready(function($) {
         return false;
     });
 
-
-    var slider = $('#slider'); // селектор слайдера
-    var pagerItem = $('#slider-pager div'); // селектор пункта пагинатора
-    var active = 'activeint'; // класс активного пункта пагинатора
-
-    if ( slider.length ) {
-        var prev = false;
-        function pager() {
-            pagerItem.filter('.' + active).each(function() {
-                var el = $(this);
-                if (prev) {
-                    if ( el.is(':first-child') ) {
-                        el.removeClass(active);
-                        pagerItem.filter(':last').addClass(active);
-                    } else el.removeClass(active).prev().addClass(active);
-                } else {
-                    if ( el.is(':last-child') ) {
-                        el.removeClass(active);
-                        pagerItem.filter(':first').addClass(active);
-                    } else el.removeClass(active).next().addClass(active);
-                }
-            })
-        }
-        slider.bxSlider({
-            // опции плагина
-            controls: false,
-            minSlides: 1,
-            slideWidth: 578,
-            pager: false,
-            auto: true,
-            wrapperClass: '',
-            useCSS: false,
-            pause: 5000,
-            onSlidePrev: function() { prev = true; pager(); },
-            onSlideNext: function() { prev = false; pager(); }
-            // конец опций
-        });
-        pagerItem.hover(function() {
-            slider.stopAuto();
-            var index = pagerItem.index($(this));
-            slider.finish().goToSlide(index);
-            pagerItem.removeClass(active);
-            $(this).addClass(active);
-        }).mouseleave(function() {
-            slider.startAuto();
-        });
-        pagerItem.filter(':first').addClass(active);
-    }
+    
 
     /*Поиск*/
     $('#imgsearch').click(function(){
@@ -170,5 +121,20 @@ $('ul.sub-menu li').after("<br>");
 
     $('ul#menu-pitomnik > li > a').append("<p class='hr'></p>");
 
-    console.log($('ul.menu-pitomnik li > a').text());
+    $(".spans").on('click',function(){
+        $(".footer").toggle();
+
+    });
+
+    /*Притомник*/
+    $('.popup-pitomnik').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        focus: '#username',
+        modal: true
+    });
+    $(document).on('click', '.popup-modal-dismiss', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+    });
 });

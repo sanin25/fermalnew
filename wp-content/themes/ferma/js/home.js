@@ -71,25 +71,6 @@ jQuery(document).ready(function($){
             return preloaderOutTl;
         }
 
-
-
-        /*Затемняем в конце */
-
-        var cants = [".cont1", ".cont3", ".cont4", ".cont5", ".cont6", ".cont7"];
-
-        cants.forEach(function (cant, index) {
-
-
-            var num = index + 1;
-            // make scene
-            var contScene = new ScrollMagic.Scene({
-                triggerElement: cant,
-                triggerHook: 0,
-                offset: 350
-            })
-                .setTween(new TimelineMax().to($(cant), 0.32, {autoAlpha: 0.5, ease: Power0.easeNone}))
-                .addTo(controller);
-        });
         /*Первый сайд лого*/
 
         var logo = new TimelineMax();
@@ -105,118 +86,10 @@ jQuery(document).ready(function($){
             .addTo(controller);
 
         /*Конец лого*/
-        /*Салайд 2 */
 
-        var about = new TimelineMax();
-
-        var lineAbout = about
-            .to($('#tab-container h3'), 0.2, {left: "0%", ease: Back.easeOut.config(4), y: 0})
-            .to($('#tab-container .line'), 1, {width: "100%"})
-            .to($('#tab-container .textunber '), 2, {
-                autoAlpha: 1,
-                ease: Elastic.easeOut.config(1, 0.3),
-                y: 0
-            }, "-=0.2");
-
-        var logoScroll = new ScrollMagic.Scene({
-            triggerElement: '.cont2',
-            triggerHook: 0,
-            reverse: false,
-            offset: "-200px"
-        })
-            .setTween(lineAbout)
-            .addTo(controller);
-
-
-        /*Салайд 4 kyri*/
-        var idKyri = $('.kyriimg, .kyritext');
-
-        var Kyri = new TimelineMax();
-        var lineKyri = Kyri
-            .staggerTo(idKyri, 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
-
-        var kyriScroll = new ScrollMagic.Scene({
-            triggerElement: '.cont4',
-            triggerHook: 0,
-            reverse: false,
-            offset: -250
-        })
-            .setTween(lineKyri)
-            .addTo(controller);
-
-        /*Салайд 5 about*/
-
-        var gusy = new TimelineMax();
-        var lineGusy = gusy
-            .staggerTo($('.gusi'), 1, {y: 0, x: 0, autoAlpha: 1, ease: Bounce.easeOut}, 0.5);
-
-        var gusyiScroll = new ScrollMagic.Scene({
-            triggerElement: '.cont5',
-            triggerHook: 0,
-            reverse: false,
-            offset: -350
-        })
-            .setTween(lineGusy)
-            .addTo(controller);
-
-
-
-        var paraGusy = new TimelineMax();
-        var paraG = paraGusy
-            .set($('.backimg'), {y: '-150'})
-            .set($('.backimg2'), {y: '+300'})
-            .to($('.backimg'), 2, {y: '+=260'})
-            .to($('.backimg2'), 2, {y: '-=660'}, "-=2");
-
-        var gusyiScrollPara = new ScrollMagic.Scene({
-            triggerElement: '.cont5',
-            triggerHook: 0,
-            duration: "200%",
-            reverse: false,
-            offset: -550
-        })
-            .setTween(paraG)
-            .addTo(controller);
-
-        /*Слайд 6*/
-
-        var pavlin = new TimelineMax();
-        var linePavlin = pavlin
-            .staggerTo($('.pavlin'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
-
-
-        var pavlinScroll = new ScrollMagic.Scene({
-            triggerElement: '.cont6',
-            triggerHook: 0,
-            reverse: false,
-            offset: -250
-        })
-            .setTween(linePavlin)
-            .addTo(controller);
-
-        /*Слайд 7*/
-
-        var fazan = new TimelineMax();
-        var lineFazan = fazan
-            .staggerTo($('.fazan'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
-
-
-        var fazaninScroll = new ScrollMagic.Scene({
-            triggerElement: '.cont7',
-            triggerHook: 0,
-            reverse: false,
-            offset: -250
-        })
-            .setTween(lineFazan)
-            .addTo(controller);
 
 
         /*Питомник*/
-        /*
-         var pit = new TimelineMax();
-         var pitommikLine = pit
-         .to($('#cont8 .bgc'), 1, {backgroundPositionY:  90});*/
-
 
         var pitScroll = new ScrollMagic.Scene({
             triggerElement: '.cont8',
@@ -228,6 +101,18 @@ jQuery(document).ready(function($){
         // .addIndicators()
             .setClassToggle('.fade', 'fade-in')
             .addTo(controller);
+
+
+        $('.popup-pitomnik').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#username',
+            modal: true
+        });
+        $(document).on('click', '.popup-modal-dismiss', function (e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+        });
 
         /*Конец питомник*/
         /*Текст к картинкам контакты*/
@@ -241,25 +126,17 @@ jQuery(document).ready(function($){
 
             }
         );
+    /*Подсветка название в сайдере*/
+    var liveInFarmText = $('#liveinfarm img');
+    liveInFarmText.on("mouseover",function(event ){
 
-        var pitomnik = new TimelineMax();
-        $('pitomnikbg1').hover();
-        var lineKyri = Kyri
-            .staggerTo($('.kyri'), 1, {autoAlpha: 1, rotationY: "+=360deg"}, 0.1, "-=1");
+        $( this ).parent().siblings()
+            .css( {"background-color":"#725337","opacity":1});
 
-
-        /*    /!*Слайден Питомника*!/
-         $('.pitomnik').bxSlider({
-         mode:"fade",
-         minSlides: 1,
-         controls: true,
-         wrapperClass: 'pitomnikcarusel',
-         auto: true,
-         nextText: 'Вперед',
-         prevText:'Назад',
-         pager:false,
-         pause:5000
-
-         });*/
+    });
+    liveInFarmText.on("mouseout",function(event ){
+        $( this ).parent().siblings()
+            .css({"background": '',"opacity": ''});
+    })
 
 });

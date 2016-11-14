@@ -7,51 +7,55 @@
  * Template Name: ferma
  */
 get_header(); // Подключаем хедер?>
-    <article class="heigh2 cont1 clearfix">
+    <section class="heigh2 cont1 clearfix">
 		<div class="bcg"></div>
 		<img src="<?php echo get_template_directory_uri()?>/img/logo.svg" alt="Эко ферма" id="logo">
         <h1>«Растёт то, что мы выращиваем в душе, - таков  закон природы».</h1>
-    </article>
+    </section>
 
-    <article class="heigh cont2  clearfix">
-		<div class="bcg"></div>
-        <?php get_template_part('inc/about');?>
-    </article>
-
-	<article class="heigh cont3 clearfix">
+	<section class="heigh cont3">
         <div class="bcg"></div>
 		<?php get_template_part('inc/liveferma');?>
-	</article>
+	</section>
 
-	<article class="heigh cont4 clearfix" id="slide02">
+	<section class="heigh cont4 clearfix" id="slide02">
 
         <div class="bcg"></div>
 
 		<?php get_template_part('inc/kyri');?>
-	</article>
+	</section>
 
-	<article class="heigh cont5 clearfix">
+	<section class="heigh cont5 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/gusi');?>
-	</article>
+	</section>
 
-	<article class="heigh cont6 clearfix">
+	<section class="heigh cont6 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/pavlin');?>
-	</article>
+	</section>
 
-	<article class="heigh cont7 clearfix">
+	<section class="heigh cont7 clearfix">
         <div class="bcg"></div>
 		<?php get_template_part('inc/fazan');?>
-	</article>
-	<article class="heigh cont8 clearfix">
+	</section>
+	<section class="heigh cont8 clearfix">
+		<div class="contactpit">
+			<ul>
+				<li><i class="fa fa-phone" aria-hidden="true"></i> +38-067-600-10-66</li>
+				<li><i class="fa fa-phone" aria-hidden="true"></i> +38-099-759-93-94</li>
+				<hr>
+				<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс растение</li>
+				<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс птицы</li>
+			</ul>
+		</div>
 		<div class="fade">
-			<img id="logopitom"  src="<?php echo get_template_directory_uri()?>/img/pitomniklogo.svg" alt="">
+			<img id="logopitom"  src="<?php echo get_template_directory_uri()?>/img/pit.png" alt="">
 			<hr class="hr">
 		</div>
         <div class="bcg"></div>
 		<?php get_template_part('inc/pitomnik');?>
 
-	</article>
+	</section>
 <?php get_sidebar(); // Подключаем сайдбар ?>
 <?php get_footer(); // Подключаем футер ?>
