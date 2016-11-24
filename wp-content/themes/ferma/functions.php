@@ -44,6 +44,7 @@ set_post_thumbnail_size(254, 190); // Задаем размеры миниатю
         wp_enqueue_style( 'my-animate', get_stylesheet_directory_uri().'/css/animate.css');
 
         wp_enqueue_style( 'my-magnific', get_stylesheet_directory_uri().'/css/magnific-popup.css');
+        wp_enqueue_style( 'my-bootstrapt', get_stylesheet_directory_uri().'/css/bootstrap.min.css');
 
     }
 
@@ -123,8 +124,8 @@ if( is_user_role( 'editor' ) ){
 	remove_menu_page( 'users.php' );                  //Пользователи
 	remove_menu_page( 'tools.php' );                  //Инструменты
 	remove_menu_page( 'options-general.php' );        //Параметры
-	remove_menu_page( 'profile.php' );                //Параметры
-	remove_menu_page( 'edit-tags.php' );                //Параметры
+	remove_menu_page( 'profile.php' );               //Параметры
+        remove_menu_page( 'edit.php?post_type=page' );
 }
 add_action( 'admin_menu', 'remove_menus' );
     add_action( 'admin_menu', 'my_remove_menu_pages' );
