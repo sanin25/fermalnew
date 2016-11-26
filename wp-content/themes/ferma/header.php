@@ -9,16 +9,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
 <!-- RSS, стиль и всякая фигня -->
 <link rel="alternate" type="application/rdf+xml" title="RDF mapping" href="<?php bloginfo('rdf_url'); ?>" />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php bloginfo('rss_url'); ?>" />
 <link rel="alternate" type="application/rss+xml" title="Comments RSS" href="<?php bloginfo('comments_rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php
-	// ОТВЕТ НА 
+	// ОТВЕТ НА
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	?>
  <!--[if lt IE 9]>
@@ -59,7 +59,7 @@
 <div class="forma">
 <img id="emailform" src="<?php echo get_template_directory_uri();?>/img/vopros.png">
 <div class="semdmail">
-	<form id="form"> 
+	<form id="form">
 <img id="close" src="<?php echo get_template_directory_uri();?>/img/close.png">
 	<p>Отправить письмо</p><br/>
 		<div class="formblock">
@@ -76,7 +76,7 @@
 		<br/>
 		<button>Отправить</button>
 	</form>
-	
+
 </div>
 
 </div>
@@ -88,3 +88,16 @@
 		<?php get_search_form(); ?>
 	</div>
 </div>
+
+<!--Контакты-->
+
+<div class="contactpit">
+	<ul>
+		<li><i class="fa fa-phone" aria-hidden="true"></i> +38-067-600-10-66</li>
+		<li><i class="fa fa-phone" aria-hidden="true"></i> +38-099-759-93-94</li>
+		<!--<hr>
+		<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс растение</li>
+		<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс птицы</li>-->
+	</ul>
+</div>
+

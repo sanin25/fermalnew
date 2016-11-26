@@ -1,7 +1,17 @@
 $color_link : rgb(14, 85, 5);
 $color_hover :  #13007A;
 $color_border : rgba(68, 91, 158, 0.86);
-
+h2, h4, h3{
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+a{
+	color: #337ab7;
+}
   @font-face {
     font-family: albionic; /* Имя шрифта */
     src: url(../fonts/albionic.ttf); /* Путь к файлу со шрифтом */
@@ -104,9 +114,7 @@ $color_border : rgba(68, 91, 158, 0.86);
 	text-decoration: none;
     list-style-type:none;
 }
-#hidden{
-	display: none;
-}
+
 html,body {
 	background-color: #212121;
 	color: #1a1a1a;
@@ -117,6 +125,9 @@ html,body {
   letter-spacing: 1.4px;
 	vertical-align: baseline;
     height: 100%;
+}
+#hidden{
+	display: none;
 }
 .clearfix {
 	z-index: 0;
@@ -1224,7 +1235,7 @@ section {
 	z-index: 1;
 }
 .searchsection{
-    background: rgba(196, 208, 204, 0.4);
+    background: rgba(196, 208, 204, 1);
 .searchpage{
 	margin:0 auto;
 	width:80%;

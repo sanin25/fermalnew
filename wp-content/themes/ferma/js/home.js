@@ -77,7 +77,8 @@ jQuery(document).ready(function($){
 
         logo.to($('#logo'), 1, {y: '+=460'}, {ease: Power1.easeOut}, '+=0.4')
             .to($('.cont1 h1'), 1, {autoAlpha: "-1"}, {ease: Power1.easeOut}, '+=0.8');
-        var logoScroll = new ScrollMagic.Scene({
+        
+    var logoScroll = new ScrollMagic.Scene({
             triggerElement: '.cont1',
             triggerHook: 0,
             duration: "300%"

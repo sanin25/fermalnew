@@ -44,7 +44,7 @@ set_post_thumbnail_size(254, 190); // Задаем размеры миниатю
         wp_enqueue_style( 'my-animate', get_stylesheet_directory_uri().'/css/animate.css');
 
         wp_enqueue_style( 'my-magnific', get_stylesheet_directory_uri().'/css/magnific-popup.css');
-        wp_enqueue_style( 'my-bootstrapt', get_stylesheet_directory_uri().'/css/bootstrap.min.css');
+        //wp_enqueue_style( 'my-bootstrapt', get_stylesheet_directory_uri().'/css/bootstrap.min.css');
 
     }
 

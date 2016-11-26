@@ -40,15 +40,7 @@ get_header(); // Подключаем хедер?>
 		<?php get_template_part('inc/fazan');?>
 	</section>
 	<section class="heigh cont8 clearfix">
-		<div class="contactpit">
-			<ul>
-				<li><i class="fa fa-phone" aria-hidden="true"></i> +38-067-600-10-66</li>
-				<li><i class="fa fa-phone" aria-hidden="true"></i> +38-099-759-93-94</li>
-				<hr>
-				<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс растение</li>
-				<li class="pricelict"><i class="fa fa-list-alt" aria-hidden="true"></i> Прайс птицы</li>
-			</ul>
-		</div>
+	
 		<div class="fade">
 			<img id="logopitom"  src="<?php echo get_template_directory_uri()?>/img/pit.png" alt="">
 			<hr class="hr">

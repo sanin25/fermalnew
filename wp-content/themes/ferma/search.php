@@ -12,6 +12,7 @@ get_header(); // Подключаем хедер?>
 <div class="searchpage">
 	
 		<h1><?php printf( __( 'Результаты поиска: %s', 'twentyten' ), '' . get_search_query() . '' ); // Динамический заголовок поиска?></h1>
+		tggr
 	<?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
 <div class="searchbody">
 
