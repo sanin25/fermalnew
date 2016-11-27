@@ -1,0 +1,436 @@
+$color_link : rgb(14, 85, 5);
+$color_hover :  #13007A;
+$color_border : rgba(68, 91, 158, 0.86);
+.is-loading {
+  overflow: hidden;
+}
+
+#hidden{
+  display: none;
+}
+
+
+@font-face {
+  font-family: albionic; /* Имя шрифта */
+  src: url(../fonts/albionic.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+  font-family: GroticLtNr; /* Имя шрифта */
+  src: url(../fonts/GroticLtNr.ttf); /* Путь к файлу со шрифтом */
+}
+
+.navbar-toggle{
+  background: #b6ac8f !important;
+  float: left !important;
+  .icon-bar{
+    background: $color_link;
+
+  }
+}
+
+h3,h2{
+  background: rgba(255, 248, 248, 0.45);
+  padding: 10px;
+  a{
+    color: $color_link;
+  }
+}
+
+/*------------------Контент 1-------------------*/
+
+.cont1{
+  background: url("../img/cont1.jpg") 0 0 no-repeat;
+  background-size: cover;
+  #logo{
+    width: 30%;
+    padding-top: 80px;
+  }
+  h3{
+    background: rgba(114, 84, 56, 0.7);
+    padding: 10px;
+    color: #fff;
+  }
+}
+/*--------------------------------Контейнер 2 -------------------------*/
+.cont2{
+  background: url("../img/cont2.jpg")0 0 no-repeat;
+  background-size: cover;
+}
+
+/*--------------------------------Контейнер 3 ----------------------------*/
+.cont-all{
+   .thumbnail{
+     background: url("../img/bg-plit.jpg")repeat !important;
+     padding: 0 !important;
+     overflow: hidden;
+     height: 410px;
+     .imgin{
+       overflow: hidden;
+     }
+     .more{
+       font-size:120%;
+     }
+     img{
+       width: 100%;
+       height: 230px !important;
+       @include transition(all 1s ease-out);
+       &:hover {
+         @include transform(scale(1.2));
+       }
+     }
+   }
+ }
+
+/*----Заднии фоны !--*/
+.bg-3{
+  background: url("../img/cont3.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+.bg-4{
+  background: url("../img/cont4.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+.bg-5{
+  background: url("../img/cont5.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+.bg-6{
+  background: url("../img/cont6.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.bg-7{
+  background: url("../img/bg-plit.jpg") repeat;
+
+}
+.bg-singl{
+  background: url("../img/bg.png") repeat;
+}
+/*----Питомник-----*/
+.pitomnik{
+  #logopitom{
+    width: 33%;
+  }
+  .thumbnail{
+    background: url("../img/bg-plit.jpg")repeat !important;
+    padding: 0 !important;
+    overflow: hidden;
+    height: 230px;
+    h3{
+      top: -66px;
+      position: relative;
+    }
+    .imgin{
+      overflow: hidden;
+    }
+    img{
+      width: 100%;
+      height: 230px !important;
+      @include transition(all 1s ease-out);
+      &:hover {
+        @include transform(scale(1.2));
+      }
+    }
+  }
+}
+.slider-live-on-farm {
+  list-style-type: none;
+  margin: 0 auto;
+  overflow: hidden;
+  li{
+
+    width: 350px;
+    word-wrap: break-word;
+    display: block;
+    margin-left: 10px;
+    margin: 0 auto;
+
+    .txtmin{
+      background-color: #0e5505;
+      margin: 0;
+      color: #FFF;
+      font-size: 100%;
+      padding: 10px;
+    }
+
+  }
+}
+/*Форма отправики письма*/
+.forma{
+  position:fixed;
+  right:0;
+  z-index: 5;
+  img{
+    height:190px;
+    float: left;
+    position: relative;
+    right: 0;
+    top: 32px;
+    cursor: pointer;
+  }
+  .semdmail{
+    margin-right: -400px;
+    float: right;
+  }
+  #close{
+    height: 37px;
+    z-index: 6;
+    position: absolute;
+    left: -12px;
+    top: -9px;
+    &:hover{
+      background: url(../img/close-hover.png) 0 0 no-repeat;
+    }
+  }
+  form{
+    background: #3D9DE4;
+    @include border-radius(20px);
+    position: relative;
+    top: 20px;
+    font-family: cursive;
+    button{
+      left: 112px;
+      bottom: 19px;
+      padding: 8px;
+      position: relative;
+      &:hover{
+        border: 2px solid #red;
+      }
+    }
+    p{
+      font-size: 131%;
+      position: relative;
+      top: 18px;
+      color: $color_link;
+      text-align: center;
+    }
+    input{
+      height: 28px;
+      float: right;
+      margin-right: 6px;
+      @include border-radius(8px);
+      &:hover{
+        @include box-shadow (0px 0px 8px 0px rgba(19,209,41,1)inset);
+
+
+      }
+    }
+  }
+}
+
+/*поиск картинка */
+#imgsearch{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: -1%;
+  top: 81px;
+  cursor: pointer;
+  z-index: 9999;
+  &:hover{
+    @include transform(scale(1.1));
+  }
+}
+
+/*Поиск форма*/
+
+.search{
+  position: fixed;
+  z-index: 9999;
+  @include transform(translate(-100%));
+  .searchform{
+    #closesearch{
+      position: relative;
+      top: -32px;
+      z-index: 5;
+      &:hover{
+        background: url(../img/close-hover.png) 0 0 no-repeat;
+        cursor: pointer;
+        @include transform(scale(1.1));
+      }
+    }
+  }
+}
+
+#imgsearch{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: -1%;
+  top: 81px;
+  cursor: pointer;
+  z-index: 9999;
+  &:hover{
+    @include transform(scale(1.1));
+  }
+}
+#searchform{
+  z-index: 9999;
+  position: relative;
+  left: 17px;
+  padding-top: 37px;
+  #formainput{
+    border: none;
+    height: 27px;
+    padding-left: 5px;
+    outline: none;
+  }
+}
+#searchformimg{
+  position: relative;
+  z-index: 1;
+  top: 69px;
+  z-index: 1;
+}
+.searchsection{
+  background: rgba(196, 208, 204, 1);
+  .searchpage{
+    margin:0 auto;
+    width:80%;
+    .searchbody{
+      border: 1px solid #826d6d;;
+      margin:10px;
+      padding: 45px;
+      @include  box-shadow( 0px 0px 14px 2px rgba(97, 158, 59, 0.75));
+      @include border-radius(5px)
+    }
+  }
+}
+
+
+/* -----Категория -----*/
+
+.category {
+  background: url("../img/bg-cat.png") 0 0 repeat;
+
+  h3 {
+
+    color: $color_link;
+  }
+  h1{
+    text-align: center;
+    color: $color_link;
+    font-family: albionic, Arial, sans-serif ;
+  }
+  .catimg{
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+    height: 230px !important;
+    display: block;
+    overflow: hidden;
+  }
+  .thumbnail {
+    height: 515px;
+    padding: 0!important;
+    background: url("../img/bg-plit.jpg") 0 0 repeat !important;
+  }
+  .caption{
+    background: rgba(179, 168, 140, 0.7);
+    margin: 20px;
+  }
+}
+
+/*--Футер--*/
+.footer{
+  background: #565452;
+  .contact{
+   // color: #fff;
+  }
+  span{
+    color: #fff;
+    margin-right:50px;
+    font-size:150%;
+  }
+  .nav{
+    li{
+      display: inline-block;
+      margin-right:50px;
+    }
+    a:nth-child(1)  li{
+          color: #f96300;
+          font-size:150%;
+        }
+    a:nth-child(2)  li{
+      color: #4c75a3;
+      font-size:150%;
+    }
+    a:nth-child(3)  li{
+      color: #3b5998;
+      font-size:150%;
+    }
+
+  }
+  #pawerby{
+    background: #a29e9d;
+    text-align: center;
+    span{
+      margin: 0 !important;
+      font-size: 100%;
+    }
+    span:nth-child(2){
+      color: #0e5505;
+      font-size: 80%;
+    }
+  }
+}
+#menu{
+  background: rgb(178, 165, 132);
+  a{
+    color: #564230!important;
+  }
+  a:hover {
+    background-color: rgb(134, 128, 0);
+    border-right: 0.2px solid #fff;
+    border-left: 0.2px solid #fff;
+
+    a:hover:before {
+      content: " ";
+      color: #cdc2a2 !important;
+      background-color:red ;
+      position: absolute;
+      width: 100%;
+      bottom: 21px;
+      left: 0px;
+      z-index: 2;
+      border-bottom: 2px solid;
+    }
+  }
+
+  .current-menu-item{
+    background-color: rgb(134, 128, 0);
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+  }
+}
+
+/*---Галерея*/
+.gallery-item{
+  display: inline-block;
+  margin:30px;
+  .wp-caption-text{
+    display: none !important;
+  }
+  img{
+    width: 100%;
+    border: 1px solid #171715;
+    border-radius: 20px;
+  }
+}
+
+/*Комментарии*/
+.comment-respond{
+  padding: 2px;
+  background: rgba(155, 154, 153, 0.38);
+  margin-top: 48px;
+  .form-submit{
+    padding-left:109px;
+  }
+
+}
+.gglcptch {
+  margin: 39px 109px 22px !important;
+}
+
+

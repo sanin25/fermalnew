@@ -1,0 +1,40 @@
+#my input{
+	background: yellow;
+	color: #333;
+	font-weight: 500;
+}
+#phpner-file_in{
+	width: 350px;
+	height: 350px;
+}
+#bar{
+	width: 0%;
+	height: 10px;
+	background: green;
+}
+#priceListPitomnika{
+	width: 100%;
+	border: 1px solid #000;
+}
+#priceListPitomnika td{
+	border: 1px solid #000;
+}
+#priceListPitomnika .edit{
+	background: #8b8b18;
+	padding: 1px 5px 1px 5px;
+	color: #fff;
+	float: right;
+	margin-right:5px;
+}
+#priceListPitomnika .del{
+	background: #795548;
+	padding: 1px 5px 1px 5px;
+	color: #fff;
+	float: right;
+}
+#priceListPitomnika .edit:hover{
+	background: #4a4a0a;
+}
+#priceListPitomnika .del:hover{
+	background: red;
+}
