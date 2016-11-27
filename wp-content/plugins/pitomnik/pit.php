@@ -24,7 +24,7 @@ function create_pit() {
             'not_found_in_trash' => 'Не найдено в корзине',
         ),
         'public' => true,
-        'menu_position' => 15,
+        'menu_position' => 19,
         'supports' => array( 'title','editor', 'thumbnail','comments' ),
         'taxonomies' => array( '' ),
         'menu_icon' => plugins_url( 'img/pit.png', __FILE__ ),

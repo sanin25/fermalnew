@@ -9,46 +9,64 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+    <div class="container-fluid bg-singl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
 
-			// Include the single post content template.
-			get_template_part( 'template-parts/content', 'single' );
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="menu">
+                        <?php
+                        $args = array( // Выводим верхнее меню
+                            'theme_location'=>'pitomnik',
+                            'container'=>'',
+                            'depth'=> 0,
+                            'menu_class' => "nav navbar-nav",
+                            'fallback_cb' => '__return_empty_string',
+                        );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
+                        wp_nav_menu($args)
+                        ?>
+                    </div>
 
-			if ( is_singular( 'attachment' ) ) {
-				// Parent post navigation.
-				the_post_navigation( array(
-					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
-				) );
-			} elseif ( is_singular( 'post' ) ) {
-				// Previous/next post navigation.
-				the_post_navigation( array(
-					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-				) );
-			}
+                </div>
+                <div class="col-md-12">
 
-			// End of the loop.
-		endwhile;
-		?>
+                    <h1 class="text-center"><?php the_title(); // Заголовок ?></h1>
 
-	</main><!-- .site-main -->
+                    <hr class="hr">
 
-	<?php get_sidebar( 'content-bottom' ); ?>
+                <?php if ( have_posts() ) while ( have_posts() ) : the_post(); // Начало цикла ?>
 
-</div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+
+                   <?php the_content()?>
+
+
+
+                    <?php the_tags( 'Тэги: ', ' | ', '' ); // Выводим тэги(метки) поста ?>
+
+                <?php endwhile; // Конец цикла
+
+                wp_reset_query();
+
+                ?>
+
+        </div>
+                <div class="clearfix"></div>
+
+        <?php comments_template('/comments.php'); ?>
+
+            </div>
+        </div>
+
+    </div>
+
+<?php get_sidebar(); // Подключаем сайдбар ?>
+
+<?php get_footer(); // Подключаем футер ?>
